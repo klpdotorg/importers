@@ -63,7 +63,7 @@ as t1 (
 );
 
 CREATE OR REPLACE VIEW vw_school_dise as
-       select * from dblink('host=localhost dbname=klpwww_ver4 user=klp password=1q2w3e4r', 'select d.id as dist_id, d.name as district,b.id as blck_id, b.name as block,c.id as clst.id, c.name as clus,s.id,s.name,s.dise_code,s.cat,s.moi,d.type from tb_school s,tb_boundary c, tb_boundary b, tb_boundary d where s.bid=c.id and c.parent=b.id and b.parent=d.id')
+       select * from dblink('host=localhost dbname=klpwww_ver4 user=klp password=1q2w3e4r', 'select d.id as dist_id, d.name as district,b.id as blck_id, b.name as block,c.id as clst_id, c.name as clus,s.id,s.name,s.dise_code,s.cat,s.moi,d.type from tb_school s,tb_boundary c, tb_boundary b, tb_boundary d where s.bid=c.id and c.parent=b.id and b.parent=d.id')
        as t1 (
   dist_id integer,
   district character varying(100),
