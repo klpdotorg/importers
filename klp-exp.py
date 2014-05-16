@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import Utility.EXIF
 import os,sys
 import psycopg2
 import Utility.KLPDB
@@ -9,7 +8,7 @@ import Utility.KLPDB
 connection = Utility.KLPDB.getConnection()
 cursor = connection.cursor()
 
-pidAyid={'1':90,'2':1,'3':2,'5':119,'6':119,'7':119,'8':119,'9':119,'10':119,'11':119,'12':119,'13':119,'14':101,'15':101,'18':101,'19':102,'23':102,'24':102,'25':102,'26':102,'27':102,'28':102,'29':102,'30':102,'31':102}
+pidAyid={'1':90,'2':1,'3':2,'5':119,'6':119,'7':119,'8':119,'9':119,'10':119,'11':119,'12':119,'13':119,'14':101,'15':101,'18':101,'19':102,'23':102,'24':102,'25':102,'26':102,'27':102,'28':102,'29':102,'30':102,'31':102,'37':121,'39':121,'38':121,'35':121,'34':121,'32':121,'41':121,'36':121,'33':121,'45':122,'44':122,'49':122,'48':122,'47':122,'43':122,'42':122,'46':122}
 
 
 queries=[{'tb_bhierarchy':'select distinct id,boundary_category from schools_boundary_category'},
@@ -17,16 +16,16 @@ queries=[{'tb_bhierarchy':'select distinct id,boundary_category from schools_bou
 {'tb_boundary' : "select id,parent_id,name,boundary_category_id,boundary_type_id from schools_boundary where not name='No Parent'"},
 {'tb_address': 'select * from schools_institution_address'},
 {'tb_school': 'select inst.id,inst.boundary_id,inst.inst_address_id,inst.dise_code,inst.name,cat.name,inst.institution_gender,moi.name,mgmt.name,inst.active from schools_institution inst left outer join schools_institution_category cat on (inst.cat_id=cat.id) left outer join schools_institution_languages lang on (lang.institution_id=inst.id) left outer join schools_moi_type moi on (moi.id=moi_type_id) left outer join schools_institution_management mgmt on (inst.mgmt_id=mgmt.id)'},
-{'tb_child' : 'select c.id,lower(trim(c."firstName")),lower(trim(c."middleName")),lower(trim(c."lastName")),to_char(c.dob, \'YYYY-MM-DD\') as dob,c.gender,mt.name from schools_child c left outer join schools_moi_type mt on (c.mt_id=mt.id)'},
+{'tb_child' : 'select c.id,lower(trim(c.first_name)),lower(trim(c.middle_name)),lower(trim(c.last_name)),to_char(c.dob, \'YYYY-MM-DD\') as dob,c.gender,mt.name from schools_child c left outer join schools_moi_type mt on (c.mt_id=mt.id)'},
 {'tb_class':"select id,institution_id,name,section from schools_studentgroup where group_type='Class'"},
 {'tb_academic_year':'select * from schools_academic_year'},
 {'tb_student':'select * from schools_student'},
 {'tb_student_class':"select stusg.student_id,stusg.student_group_id,stusg.academic_id,stusg.active from schools_student_studentgrouprelation stusg,schools_studentgroup sg where stusg.student_group_id=sg.id and sg.group_type='Class'"},
-{'tb_programme':'select id,name,"startDate","endDate",programme_institution_category_id from schools_programme where id in (1,2,3,5,6,7,8,9,14,15,18,19,23,24,25,26,27,28,29,30,31)'},
-{'tb_assessment':'select ass.id,ass.name,ass.programme_id,ass."startDate",ass."endDate" from schools_assessment ass,schools_programme p where ass.programme_id=p.id and p.id in (1,2,3,5,6,7,8,9,14,15,18,19,23,24,25,26,27,28,29,30,31)'},
-{'tb_question':'select q.id,q.assessment_id,q.name,q."questionType",q."scoreMax",q."scoreMin",q.grade from schools_question q, schools_assessment ass,schools_programme p where q.assessment_id=ass.id and ass.programme_id=p.id and p.id in (1,2,3,5,6,7,8,9,14,15,18,19,23,24,25,26,27,28,29,30,31)'},
-{'tb_student_eval':'select se.question_id,se.object_id,se."answerScore",se."answerGrade" from schools_answer se,schools_question q, schools_assessment ass,schools_programme p where se.question_id=q.id and q.assessment_id=ass.id and ass.programme_id=p.id and p.id in (1,2,3,5,6,7,8,9,14,15,18,19,23,24,25,26,27,28,29,30,31)'},
-{'tb_teacher': 'select t.id,lower(trim(t."firstName")),lower(trim(t."middleName")),lower(trim(t."lastName")),t.gender,t.active,mt.name,t.doj,type."staffType" from schools_staff t left outer join schools_moi_type mt on (t.mt_id=mt.id) left outer join schools_staff_type type on (t.staff_type_id=type.id)'},
+{'tb_programme':'select id,name,start_date,end_date,programme_institution_category_id from schools_programme where id in (1,2,3,5,6,7,8,9,14,15,18,19,23,24,25,26,27,28,29,30,31,37,39,38,35,34,32,41,36,33,45,44,49,48,47,43,42,46)'},
+{'tb_assessment':'select ass.id,ass.name,ass.programme_id,ass.start_date,ass.end_date from schools_assessment ass,schools_programme p where ass.programme_id=p.id and p.id in (1,2,3,5,6,7,8,9,14,15,18,19,23,24,25,26,27,28,29,30,31,37,39,38,35,34,32,41,36,33,45,44,49,48,47,43,42,46)'},
+{'tb_question':'select q.id,q.assessment_id,q.name,q.question_type,q.score_max,q.score_min,q.grade from schools_question q, schools_assessment ass,schools_programme p where q.assessment_id=ass.id and ass.programme_id=p.id and p.id in (1,2,3,5,6,7,8,9,14,15,18,19,23,24,25,26,27,28,29,30,31,37,39,38,35,34,32,41,36,33,45,44,49,48,47,43,42,46)'},
+{'tb_student_eval':'select se.question_id,se.object_id,se.content_type,se.answer_score,se.answer_grade from schools_answer se,schools_question q, schools_assessment ass,schools_programme p where se.question_id=q.id and q.assessment_id=ass.id and ass.programme_id=p.id and p.id in (1,2,3,5,6,7,8,9,14,15,18,19,23,24,25,26,27,28,29,30,31,37,39,38,35,34,32,41,36,33,45,44,49,48,47,43,42,46)'},
+{'tb_teacher': 'select t.id,lower(trim(t.first_name)),lower(trim(t.middle_name)),lower(trim(t.last_name)),t.gender,t.active,mt.name,t.doj,type.staff_type from schools_staff t left outer join schools_moi_type mt on (t.mt_id=mt.id) left outer join schools_staff_type type on (t.staff_type_id=type.id)'},
 {'tb_teacher_qual':'select sq.staff_id,qual.qualification from schools_staff_qualification sq,schools_staff_qualifications qual where sq.staff_qualifications_id=qual.id'},
 {'tb_teacher_class': 'select staff_id,student_group_id,academic_id,active from schools_staff_studentgrouprelation'}]
 
