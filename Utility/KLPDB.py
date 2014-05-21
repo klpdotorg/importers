@@ -13,3 +13,12 @@ def getConnection():
   connection = psycopg2.connect(dsn)
   return connection
 
+def getWwwConnection():
+  config = SafeConfigParser()
+  config.read(os.path.join(os.getcwd(),'config/klpconfig.ini'))
+  db = config.get('Database_www','dbname')
+  username = config.get('Database_www','user')
+  passwd = config.get('Database_www','passwd')
+  dsn = "dbname="+db+" user="+username+" host='localhost' password="+passwd
+  connection = psycopg2.connect(dsn)
+  return connection
