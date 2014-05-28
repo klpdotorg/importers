@@ -140,6 +140,7 @@ DROP TABLE IF EXISTS "tb_assessment" cascade;
 CREATE TABLE "tb_assessment" (
   "id" serial unique, -- 'Assessment id'
   "name" varchar(300) NOT NULL,
+  "atype" integer,
   "pid" integer references "tb_programme" ("id") ON DELETE CASCADE, -- Programme id
   "start" date default CURRENT_DATE,
   "end" date default CURRENT_DATE,
