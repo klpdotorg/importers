@@ -87,6 +87,9 @@ select link_ay_program(ARRAY[119,101,102,121,122]);
 DROP FUNCTION agg_assessment_basic(int[]);
 -- Takes in a collection of assessment IDs
 -- This is table gives the as is demographic status per assessment
+-- This table will tell you for Eg. How many girls, speaking kannada belonging to
+-- GUHPS Austin Town were part of the English Pretest 
+-- (with an id, that  can be viewed with Acad year then)
 CREATE OR REPLACE FUNCTION agg_assessment_basic(pgmids int[])RETURNS void AS $$
 DECLARE
     asmnt record;
@@ -96,13 +99,14 @@ BEGIN
     EXECUTE 'CREATE TABLE agg_asmnt_basic (' ||
       ' "sid" integer REFERENCES "tb_school" ("id") ON DELETE CASCADE,' ||
       ' "aid" integer REFERENCES "tb_assessment" ("id") ON DELETE CASCADE,' ||
+      ' "pid" integer REFERENCES "tb_programme" ("id") ON DELETE CASCADE,' ||
       ' "studentgroup" varchar(50),' ||
       ' "sex" sex,' ||
       ' "mt" school_moi,' ||
       ' "num" integer' ||
       ')';
 
-    FOR asmnt in SELECT s.id as id,ass.id as assid,cl.name as clname,c.sex as sex, c.mt as mt, 
+    FOR asmnt in SELECT s.id as id,ass.id as assid, p.id, cl.name as clname,c.sex as sex, c.mt as mt, 
                     count(distinct stu.id) AS count 
                     FROM tb_student_eval se,tb_question q,tb_assessment ass, tb_programme p, tb_student stu, 
                     tb_class cl, tb_student_class sc, tb_child c, tb_school s 
@@ -111,10 +115,55 @@ BEGIN
                     and (se.grade is not null or se.mark is not null) 
                     GROUP BY s.id, ass.id,cl.id,c.sex,c.mt
     LOOP
-      insert into agg_asmnt_basic values (asmnt.id,asmnt.assid,asmnt.clname,asmnt.sex,asmnt.mt,asmnt.count);
+      insert into agg_asmnt_basic values (asmnt.id,asmnt.assid,p.id,asmnt.clname,asmnt.sex,asmnt.mt,asmnt.count);
     END LOOP;
 END;
 $$ language plpgsql;
 
 -- Refer choice of Programmes from klp-exp.py
 select agg_assessment_basic(ARRAY[1,2,3,5,6,7,8,9,10,11,12,13,14,15,18,19,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,41,42,43,44,45,46,47,48,49]);
+
+
+DROP FUNCTION agg_programme_cohorts(int[]);
+-- Takes in a collection of assessment IDs
+-- This is table gives the as is demographic status per assessment
+CREATE OR REPLACE FUNCTION agg_programme_cohorts(pgmids int[])RETURNS void AS $$
+DECLARE
+    pgm record;
+    asmnts record;
+    sch record;
+BEGIN
+    EXECUTE 'DROP TABLE IF EXISTS agg_pgm_cohorts';
+
+    EXECUTE 'CREATE TABLE agg_pgm_cohorts (' ||
+      ' "sid" integer REFERENCES "tb_school" ("id") ON DELETE CASCADE,' ||
+      ' "pid" integer REFERENCES "tb_programme" ("id") ON DELETE CASCADE,' ||
+      ' "studentgroup" varchar(50),' ||
+      ' "sex" sex,' ||
+      ' "mt" school_moi,' ||
+      ' "cohortsnum" integer' ||
+      ')';
+    
+    FOR pgm in array_lower(pgmids,1)..array_upper(pgmids,1)
+    LOOP
+        FOR asmnts in EXECUTE 'select distinct id from tb_assessment where pid=pgm'
+        LOOP
+            FOR sch in SELECT s.id as id,ass.pid as pid,cl.name as clname,c.sex as sex, c.mt as mt, 
+                    count(distinct stu.id) AS count 
+                    FROM tb_student_eval se,tb_question q,tb_assessment ass, tb_student stu, 
+                    tb_class cl, tb_student_class sc, tb_child c, tb_school s 
+                    WHERE se.objid=stu.id and se.qid=q.id and q.assid=ass.id and sc.stuid=stu.id 
+                    and sc.clid=cl.id AND cl.sid = s.id AND stu.cid = c.id and ass.id = ALL(asmnts) 
+                    and (se.grade is not null or se.mark is not null) 
+                    GROUP BY s.id, ass.pid,cl.id,c.sex,c.mt
+            LOOP
+                insert into agg_asmnt_basic values (sch.id,sch.pid,sch.clname,sch.sex,sch.mt,sch.count);
+            END LOOP;
+        END LOOP;
+    END LOOP;
+END;
+$$ language plpgsql;
+
+-- Refer choice of Programmes from klp-exp.py
+select agg_programme_cohorts(ARRAY[1,2,3,5,6,7,8,9,10,11,12,13,14,15,18,19,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,41,42,43,44,45,46,47,48,49]);
+
