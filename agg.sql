@@ -130,7 +130,7 @@ DROP FUNCTION agg_programme_cohorts(int[]);
 CREATE OR REPLACE FUNCTION agg_programme_cohorts(pgmids int[])RETURNS void AS $$
 DECLARE
     pgm record;
-    asmnts record;
+    asmnts int[];
     sch record;
 BEGIN
     EXECUTE 'DROP TABLE IF EXISTS agg_pgm_cohorts';
@@ -144,21 +144,19 @@ BEGIN
       ' "cohortsnum" integer' ||
       ')';
     
-    FOR pgm in array_lower(pgmids,1)..array_upper(pgmids,1)
+    FOR i in array_lower(pgmids,1)..array_upper(pgmids,1)
     LOOP
-        FOR asmnts in EXECUTE 'select distinct id from tb_assessment where pid=pgm'
+        asmnts := ARRAY(select distinct id from tb_assessment where pid=pgmids[i]);
+        FOR sch in SELECT s.id as id,ass.pid as pid,cl.name as clname,c.sex as sex, c.mt as mt, 
+                count(distinct stu.id) AS count 
+                FROM tb_student_eval se,tb_question q,tb_assessment ass, tb_student stu, 
+                tb_class cl, tb_student_class sc, tb_child c, tb_school s 
+                WHERE se.objid=stu.id and se.qid=q.id and q.assid=ass.id and sc.stuid=stu.id 
+                and sc.clid=cl.id AND cl.sid = s.id AND stu.cid = c.id and ass.id = ALL(asmnts) 
+                and (se.grade is not null or se.mark is not null) 
+                GROUP BY s.id, ass.pid,cl.id,c.sex,c.mt
         LOOP
-            FOR sch in SELECT s.id as id,ass.pid as pid,cl.name as clname,c.sex as sex, c.mt as mt, 
-                    count(distinct stu.id) AS count 
-                    FROM tb_student_eval se,tb_question q,tb_assessment ass, tb_student stu, 
-                    tb_class cl, tb_student_class sc, tb_child c, tb_school s 
-                    WHERE se.objid=stu.id and se.qid=q.id and q.assid=ass.id and sc.stuid=stu.id 
-                    and sc.clid=cl.id AND cl.sid = s.id AND stu.cid = c.id and ass.id = ALL(asmnts) 
-                    and (se.grade is not null or se.mark is not null) 
-                    GROUP BY s.id, ass.pid,cl.id,c.sex,c.mt
-            LOOP
-                insert into agg_asmnt_basic values (sch.id,sch.pid,sch.clname,sch.sex,sch.mt,sch.count);
-            END LOOP;
+            insert into agg_asmnt_basic values (sch.id,sch.pid,sch.clname,sch.sex,sch.mt,sch.count);
         END LOOP;
     END LOOP;
 END;
