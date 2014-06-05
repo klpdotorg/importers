@@ -145,21 +145,19 @@ BEGIN
       ' "cohortsnum" integer' ||
       ')';
     
-    FOR i in 1..array_length(pgmids,1) LOOP
+    FOR i in coalesce(array_lower(pgmids, 1), 1)..coalesce(array_upper(pgmids, 1), 1) 
     LOOP
         asmnts := ARRAY(select distinct id from tb_assessment where pid=pgmids[i]);
-        IF array_length(asmnts,1) IS NOT NULL THEN
-          query:='SELECT s.id as id,ass.pid as pid,cl.name as clname,c.sex as sex, c.mt as mt, count(distinct stu.id) AS count FROM tb_student_eval se,tb_question q,tb_assessment ass,tb_student stu, tb_class cl, tb_student_class sc, tb_child c, tb_school s WHERE se.objid=stu.id and se.qid=q.id and q.assid=ass.id and sc.stuid=stu.id and sc.clid=cl.id AND cl.sid = s.id AND stu.cid = c.id and (se.grade is not null or se.mark is not null)';
-          FOR i in i in 1..array_length(asmnts,1)
-          LOOP
-              query:= query||' and se.objid in (select se.objid from tb_student_eval se,tb_question q where se.qid=q.id and (se.grade is not null or se.mark is not null) and q.assid = '||asmnts[i]||')';
-          END LOOP;
-          query=query||'GROUP BY s.id, ass.id,cl.id,c.sex,c.mt';
-          FOR sch in EXECUTE query
-          LOOP
-              insert into agg_pgm_cohorts values (sch.id,sch.pid,sch.clname,sch.sex,sch.mt,sch.count);
-          END LOOP;
-        END IF;
+        query:='SELECT s.id as id,ass.pid as pid,cl.name as clname,c.sex as sex, c.mt as mt, count(distinct stu.id) AS count FROM tb_student_eval se,tb_question q,tb_assessment ass,tb_student stu, tb_class cl, tb_student_class sc, tb_child c, tb_school s WHERE se.objid=stu.id and se.qid=q.id and q.assid=ass.id and sc.stuid=stu.id and sc.clid=cl.id AND cl.sid = s.id AND stu.cid = c.id and (se.grade is not null or se.mark is not null)';
+        FOR j in coalesce(array_lower(asmnts, 1), 1)..coalesce(array_upper(asmnts, 1), 1) 
+        LOOP
+            query:= query||' and se.objid in (select se.objid from tb_student_eval se,tb_question q where se.qid=q.id and (se.grade is not null or se.mark is not null) and q.assid = '||asmnts[j]||')';
+        END LOOP;
+        query=query||'GROUP BY s.id, ass.id,cl.id,c.sex,c.mt';
+        FOR sch in EXECUTE query
+        LOOP
+            insert into agg_pgm_cohorts values (sch.id,sch.pid,sch.clname,sch.sex,sch.mt,sch.count);
+        END LOOP;
     END LOOP;
 END;
 $$ language plpgsql;
