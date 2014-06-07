@@ -4,7 +4,7 @@ CREATE TABLE asmnt_pairs (
      "pname" varchar(300), 
      "ayid" integer,
      "ayname" varchar(12),
-     "asmnts" int[}',
+     "asmnts" int[],
      "class" varchar(24)
      );
 
@@ -96,11 +96,11 @@ insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (49,'Anganwa
 -- Function to define basic demographic data at school and boundary level
 -- There is one aggregation table per year
 -- SAMPLE DATA
--- id    | name     | bid  | sex    | mt        | count
--- 36171 | GUNNALLI | 9046 | male   | kannada   |  19
--- 36171 | GUNNALLI | 9046 | male   | urdu      |   3
--- 36171 | GUNNALLI | 9046 | female | kannada   |  16
--- 36171 | GUNNALLI | 9046 | female | urdu      |   2
+-- id    | name     | sex    | mt        | count
+-- 36171 | GUNNALLI | male   | kannada   |  19
+-- 36171 | GUNNALLI | male   | urdu      |   3
+-- 36171 | GUNNALLI | female | kannada   |  16
+-- 36171 | GUNNALLI | female | urdu      |   2
 
 DROP FUNCTION agg_institution_basic(int,int);
 -- Takes in status of the records iin the student class relation, academic year  
@@ -125,15 +125,14 @@ BEGIN
                  FROM tb_student stu, tb_class cl, tb_student_class sc, tb_child c, tb_school s
                  WHERE cl.sid = s.id AND sc.clid = cl.id AND sc.stuid = stu.id AND sc.status=active
 		 AND stu.cid = c.id AND sc.ayid = ay
-                 GROUP BY s.id, s.name, s.bid, c.sex, c.mt
+                 GROUP BY s.id, s.name, c.sex, c.mt, sc.ayid
 -- Status of the student class relationship will be 1 (deactivated). 
 -- Data is ported and aggregated with a lag of one year.
     LOOP
-                EXECUTE 'insert into agg_inst_basic'  || '(id,ayid,name,bid,sex,mt,num) values (' ||
+                EXECUTE 'insert into agg_inst_basic'  || '(id,ayid,name,sex,mt,num) values (' ||
                   schs.id || ',' ||
                   schs.ayid || ',' ||
                   '''' || schs.name || ''',' ||
-                  schs.bid || ',' ||
                   '''' || schs.sex || ''',' ||
                   '''' || schs.mt || ''',' ||
                   schs.count || ')';
@@ -174,16 +173,16 @@ BEGIN
       ' "num" integer' ||
       ')';
 
-    FOR asmnt in SELECT s.id as id,ass.id as assid, p.id, cl.name as clname,c.sex as sex, c.mt as mt, 
+    FOR asmnt in SELECT s.id as id,ass.id as assid, p.id as pid, cl.name as clname,c.sex as sex, c.mt as mt, 
                     count(distinct stu.id) AS count 
                     FROM tb_student_eval se,tb_question q,tb_assessment ass, tb_programme p, tb_student stu, 
                     tb_class cl, tb_student_class sc, tb_child c, tb_school s 
                     WHERE se.objid=stu.id and se.qid=q.id and q.assid=ass.id and sc.stuid=stu.id 
                     and sc.clid=cl.id AND cl.sid = s.id AND stu.cid = c.id and ass.pid=p.id and p.id = ANY(pgmids) 
                     and (se.grade is not null or se.mark is not null) 
-                    GROUP BY s.id, ass.id,cl.id,c.sex,c.mt
+                    GROUP BY s.id, ass.id,p.id, cl.id,c.sex,c.mt
     LOOP
-      insert into agg_asmnt_basic values (asmnt.id,asmnt.assid,p.id,asmnt.clname,asmnt.sex,asmnt.mt,asmnt.count);
+      insert into agg_asmnt_basic values (asmnt.id,asmnt.assid,asmnt.pid,asmnt.clname,asmnt.sex,asmnt.mt,asmnt.count);
     END LOOP;
 END;
 $$ language plpgsql;
@@ -244,6 +243,7 @@ BEGIN
                         insert into agg_pgm_cohorts values (sch.id,sch.aid,sch.pid,sch.clname,sch.sex,sch.mt,sch.count);
                     END LOOP;
                 END LOOP;
+            END LOOP;
         END IF;
     END LOOP;
 END;
@@ -254,7 +254,7 @@ select agg_programme_cohorts(ARRAY[1,2,3,5,6,7,8,9,10,11,12,13,14,15,18,19,23,24
 
 ---------------------------------------------------------
 -- UTILITY FUNCTION FOR MEDIAN
-
+/*DROP FUNCTION _final_median;
 CREATE FUNCTION _final_median(anyarray) RETURNS float8 AS $$ 
   WITH q AS
   (
@@ -276,13 +276,14 @@ CREATE FUNCTION _final_median(anyarray) RETURNS float8 AS $$
   ) q2;
 $$ LANGUAGE sql IMMUTABLE;
  
+DROP AGGREGATE median(anyelement);
 CREATE AGGREGATE median(anyelement) (
   SFUNC=array_append,
   STYPE=anyarray,
   FINALFUNC=_final_median,
   INITCOND='{}'
 );
-
+*/
 ---------------------------------------------------------
 
 /*DROP FUNCTION agg_score_school();
