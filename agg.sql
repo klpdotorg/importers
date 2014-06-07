@@ -183,7 +183,7 @@ BEGIN
                     and (se.grade is not null or se.mark is not null) 
                     GROUP BY s.id, ass.id,p.id, cl.id,c.sex,c.mt
     LOOP
-      RAISE NOTICE "Processing Programe ID %", asmnt.pid;
+      RAISE NOTICE 'Processing Programe ID %', asmnt.pid;
       insert into agg_asmnt_basic values (asmnt.id,asmnt.assid,asmnt.pid,asmnt.clname,asmnt.sex,asmnt.mt,asmnt.count);
     END LOOP;
 END;
@@ -233,7 +233,7 @@ BEGIN
         IF ARRAY_LENGTH(asmnts,1) IS NOT NULL THEN
             FOREACH pair in ARRAY asmnts
             LOOP
-                RAISE NOTICE "Pair is %", pair;
+                RAISE NOTICE 'Pair is %', pair;
                 FOREACH j in ARRAY pair
                 LOOP
                     query:='SELECT s.id as id,ass.id as aid,ass.pid as pid,cl.name as clname,c.sex as sex, c.mt as mt, count(distinct stu.id) AS count FROM tb_student_eval se,tb_question q,tb_assessment ass,tb_student stu, tb_class cl, tb_student_class sc, tb_child c, tb_school s WHERE se.objid=stu.id and se.qid=q.id and q.assid=ass.id and sc.stuid=stu.id and sc.clid=cl.id AND cl.sid = s.id AND stu.cid = c.id and (se.grade is not null or se.mark is not null)';
