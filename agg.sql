@@ -1,4 +1,5 @@
 ---------------------------------------------------------
+DROP TABLE IF EXISTS asmnt_pairs;
 CREATE TABLE asmnt_pairs (
      "pid" integer REFERENCES "tb_programme" ("id") ON DELETE CASCADE,
      "pname" varchar(300), 
@@ -92,7 +93,7 @@ insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (49,'Anganwa
 insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (49,'Anganwadi',122,'2013-2014','{191,219}','Age 4.5-6');
 
 
-
+-------------------------------------------------------------------------
 -- Function to define basic demographic data at school and boundary level
 -- There is one aggregation table per year
 -- SAMPLE DATA
@@ -102,6 +103,17 @@ insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (49,'Anganwa
 -- 36171 | GUNNALLI | female | kannada   |  16
 -- 36171 | GUNNALLI | female | urdu      |   2
 
+DROP TABLE IF EXISTS agg_inst_basic;
+CREATE TABLE agg_inst_basic (
+  "id" integer REFERENCES "tb_school" ("id") ON DELETE CASCADE,
+  "ayid" integer,
+  "name" varchar(300),
+  "sex" sex,
+  "mt" school_moi,
+  "num" integer
+);
+
+
 DROP FUNCTION agg_institution_basic(int,int);
 -- Takes in status of the records iin the student class relation, academic year  
 -- And a string to construct table name
@@ -109,16 +121,6 @@ CREATE OR REPLACE FUNCTION agg_institution_basic(active int,ay int)RETURNS void 
 DECLARE
     schs record;
 BEGIN
-    EXECUTE 'DROP TABLE IF EXISTS agg_inst_basic' ;
-
-    EXECUTE 'CREATE TABLE agg_inst_basic(' ||
-      '  "id" integer REFERENCES "tb_school" ("id") ON DELETE CASCADE,' ||
-      '  "ayid" integer,' ||
-      '  "name" varchar(300),' ||
-      '  "sex" sex,' ||
-      '  "mt" school_moi,' ||
-      '  "num" integer' ||
-      ')';
 
     FOR schs in SELECT s.id as id,sc.ayid as ayid, replace(s.name,'''','') as name, c.sex as sex, c.mt as mt, 
 		 count(distinct stu.id) AS count
@@ -150,6 +152,17 @@ SELECT agg_institution_basic(2,122);
 ---------------------------------------------------------
 -- Function to define basic assessment data at school and class level
 -- NO COHORTS CALCULATIONS AT THIS STAGE
+DROP TABLE IF EXISTS agg_asmnt_basic;
+
+CREATE TABLE agg_asmnt_basic (
+  "sid" integer REFERENCES "tb_school" ("id") ON DELETE CASCADE,
+  "aid" integer REFERENCES "tb_assessment" ("id") ON DELETE CASCADE,
+  "pid" integer REFERENCES "tb_programme" ("id") ON DELETE CASCADE,
+  "studentgroup" varchar(50),
+  "sex" sex,
+  "mt" school_moi,
+  "num" integer
+);
 
 DROP FUNCTION agg_assessment_basic(int[]);
 -- Takes in a collection of assessment IDs
@@ -161,18 +174,6 @@ CREATE OR REPLACE FUNCTION agg_assessment_basic(pgmids int[])RETURNS void AS $$
 DECLARE
     asmnt record;
 BEGIN
-    EXECUTE 'DROP TABLE IF EXISTS agg_asmnt_basic';
-
-    EXECUTE 'CREATE TABLE agg_asmnt_basic (' ||
-      ' "sid" integer REFERENCES "tb_school" ("id") ON DELETE CASCADE,' ||
-      ' "aid" integer REFERENCES "tb_assessment" ("id") ON DELETE CASCADE,' ||
-      ' "pid" integer REFERENCES "tb_programme" ("id") ON DELETE CASCADE,' ||
-      ' "studentgroup" varchar(50),' ||
-      ' "sex" sex,' ||
-      ' "mt" school_moi,' ||
-      ' "num" integer' ||
-      ')';
-
     FOR asmnt in SELECT s.id as id,ass.id as assid, p.id as pid, cl.name as clname,c.sex as sex, c.mt as mt, 
                     count(distinct stu.id) AS count 
                     FROM tb_student_eval se,tb_question q,tb_assessment ass, tb_programme p, tb_student stu, 
@@ -182,6 +183,7 @@ BEGIN
                     and (se.grade is not null or se.mark is not null) 
                     GROUP BY s.id, ass.id,p.id, cl.id,c.sex,c.mt
     LOOP
+      RAISE NOTICE "Processing Programe ID %", asmnt.pid;
       insert into agg_asmnt_basic values (asmnt.id,asmnt.assid,asmnt.pid,asmnt.clname,asmnt.sex,asmnt.mt,asmnt.count);
     END LOOP;
 END;
@@ -193,6 +195,19 @@ select agg_assessment_basic(ARRAY[1,2,3,5,6,7,8,9,10,11,12,13,14,15,18,19,23,24,
 ---------------------------------------------------------
 -- Function to define basic assessment data at school and class level
 -- COHORTS CALCULATIONS HERE
+
+DROP TABLE IF EXISTS agg_pgm_cohorts;
+
+CREATE TABLE agg_pgm_cohorts (
+  "sid" integer REFERENCES "tb_school" ("id") ON DELETE CASCADE,
+  "aid" integer REFERENCES "tb_assessment" ("id") ON DELETE CASCADE,
+  "pid" integer REFERENCES "tb_programme" ("id") ON DELETE CASCADE,
+  "studentgroup" varchar(50),
+  "sex" sex,
+  "mt" school_moi,
+  "cohortsnum" integer
+);
+
 DROP FUNCTION agg_programme_cohorts(int[]);
 -- Takes in a collection of assessment IDs
 -- This is table gives the as is demographic status per assessment
@@ -207,17 +222,6 @@ DECLARE
     k int;
     pair int[];
 BEGIN
-    EXECUTE 'DROP TABLE IF EXISTS agg_pgm_cohorts';
-
-    EXECUTE 'CREATE TABLE agg_pgm_cohorts (' ||
-      ' "sid" integer REFERENCES "tb_school" ("id") ON DELETE CASCADE,' ||
-      ' "aid" integer REFERENCES "tb_assessment" ("id") ON DELETE CASCADE,' ||
-      ' "pid" integer REFERENCES "tb_programme" ("id") ON DELETE CASCADE,' ||
-      ' "studentgroup" varchar(50),' ||
-      ' "sex" sex,' ||
-      ' "mt" school_moi,' ||
-      ' "cohortsnum" integer' ||
-      ')';
     
     -- The query below here is going to keep appending the constraint that the student in the 1st assessment 
     -- (of a Program) also has an answer in the 2nd assessment and in the 3rd and so on based on the number of
@@ -225,10 +229,11 @@ BEGIN
 
     FOREACH i in ARRAY pgmids 
     LOOP
-        asmnts := ARRAY(select distinct id from asmnt_pairs where pid=i);
+        asmnts := ARRAY(select distinct asmnts from asmnt_pairs where pid=i);
         IF ARRAY_LENGTH(asmnts,1) IS NOT NULL THEN
             FOREACH pair in ARRAY asmnts
             LOOP
+                RAISE NOTICE "Pair is %", pair;
                 FOREACH j in ARRAY pair
                 LOOP
                     query:='SELECT s.id as id,ass.id as aid,ass.pid as pid,cl.name as clname,c.sex as sex, c.mt as mt, count(distinct stu.id) AS count FROM tb_student_eval se,tb_question q,tb_assessment ass,tb_student stu, tb_class cl, tb_student_class sc, tb_child c, tb_school s WHERE se.objid=stu.id and se.qid=q.id and q.assid=ass.id and sc.stuid=stu.id and sc.clid=cl.id AND cl.sid = s.id AND stu.cid = c.id and (se.grade is not null or se.mark is not null)';
