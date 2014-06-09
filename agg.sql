@@ -214,7 +214,6 @@ DROP FUNCTION agg_programme_cohorts(int[]);
 CREATE OR REPLACE FUNCTION agg_programme_cohorts(pgmids int[])RETURNS void AS $$
 DECLARE
     pgm record;
-    asmnts int[];
     sch record;
     query text;
     i int;
@@ -229,10 +228,9 @@ BEGIN
 
     FOREACH i in ARRAY pgmids 
     LOOP
-        asmnts := ARRAY(select distinct asmnts from asmnt_pairs where pid=i);
-        IF ARRAY_LENGTH(asmnts,1) IS NOT NULL THEN
-            FOREACH pair in ARRAY asmnts
-            LOOP
+        FOR pair in EXECUTE 'select distinct asmnts from asmnt_pairs where pid=' || i
+        LOOP
+            IF ARRAY_LENGTH(pair,1) IS NOT NULL THEN
                 RAISE NOTICE 'Pair is %', pair;
                 FOREACH j in ARRAY pair
                 LOOP
@@ -248,8 +246,8 @@ BEGIN
                         insert into agg_pgm_cohorts values (sch.id,sch.aid,sch.pid,sch.clname,sch.sex,sch.mt,sch.count);
                     END LOOP;
                 END LOOP;
-            END LOOP;
-        END IF;
+            END IF;
+        END LOOP;
     END LOOP;
 END;
 $$ language plpgsql;
