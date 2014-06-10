@@ -260,7 +260,7 @@ select agg_programme_cohorts(ARRAY[1,2,3,5,6,7,8,9,10,11,12,13,14,15,18,19,23,24
 
 ---------------------------------------------------------
 -- UTILITY FUNCTION FOR MEDIAN
-/*DROP FUNCTION _final_median;
+DROP FUNCTION _final_median;
 CREATE FUNCTION _final_median(anyarray) RETURNS float8 AS $$ 
   WITH q AS
   (
@@ -289,58 +289,67 @@ CREATE AGGREGATE median(anyelement) (
   FINALFUNC=_final_median,
   INITCOND='{}'
 );
-*/
+
 ---------------------------------------------------------
+-- UTILITY FUNCTION FOR FINDING MAX SCORE FOR AN ASSESSMENT
 
-/*DROP FUNCTION agg_score_school();
-    CREATE OR REPLACE FUNCTION agg_programme_cohorts(pgmids int[])RETURNS void AS $$
-    DECLARE
-      pgm record;
-      asmnts int[];
-      sch record;
-      query text;
-      i int;
-      j int;
-    BEGIN
-    EXECUTE 'DROP TABLE IF EXISTS agg_pgm_cohorts';
+DROP TABLE IF EXISTS asmnt_max_score;
 
-    EXECUTE 'CREATE TABLE agg_pgm_cohorts (' ||
-      ' "sid" integer REFERENCES "tb_school" ("id") ON DELETE CASCADE,' ||
-      ' "pid" integer REFERENCES "tb_programme" ("id") ON DELETE CASCADE,' ||
-      ' "studentgroup" varchar(50),' ||
-      ' "sex" sex,' ||
-      ' "mt" school_moi,' ||
-      ' "cohortsnum" integer' ||
-      ')';
-    
-    --The query below here is going to keep appending the constraint that the student in the 1st assessment 
-    --(of a Program) also has an answer in the 2nd assessment and in the 3rd and so on based on the number of
-    --assessments in the program.
+CREATE TABLE asmnt_max_score (
+  "aid" integer REFERENCES "tb_assessment" ("id") ON DELETE CASCADE,
+  "atype" integer, --0 for Grade type, 1 for Marks type, 2 for both
+  "maxscore" integer
+);
 
-    FOREACH i in ARRAY pgmids 
+DROP FUNCTION agg_max_score(int[]);
+CREATE FUNCTION agg_max_score(pgmids int[]) RETURNS void AS $$
+DECLARE
+  qtype int[];
+  typ int;
+  questions int[];
+  maxmarks int;
+  grade_arr text[];
+BEGIN
+  FOREACH i in ARRAY pgmids 
+  LOOP
+    FOR pair in EXECUTE 'select distinct asmnts from asmnt_pairs where pid=' || i
     LOOP
-        asmnts := ARRAY(select distinct id from tb_assessment where pid=i);
-        IF ARRAY_LENGTH(asmnts,1) IS NOT NULL THEN
-            query:='SELECT s.id as id,ass.pid as pid,cl.name as clname,c.sex as sex, c.mt as mt, count(distinct stu.id) AS count FROM tb_student_eval se,tb_question q,tb_assessment ass,tb_student stu, tb_class cl, tb_student_class sc, tb_child c, tb_school s WHERE se.objid=stu.id and se.qid=q.id and q.assid=ass.id and sc.stuid=stu.id and sc.clid=cl.id AND cl.sid = s.id AND stu.cid = c.id and (se.grade is not null or se.mark is not null)';
-            RAISE NOTICE 'asmt,pgm are %,%', asmnts, i;
-            FOREACH j in ARRAY asmnts 
-            LOOP
-                query:= query||' and se.objid in (select se.objid from tb_student_eval se,tb_question q where se.qid=q.id and (se.grade is not null or se.mark is not null) and q.assid = '||j||')';
-            END LOOP;
-            query=query||'GROUP BY s.id, ass.id,cl.id,c.sex,c.mt';
-            FOR sch in EXECUTE query
-            LOOP
-                insert into agg_pgm_cohorts values (sch.id,sch.pid,sch.clname,sch.sex,sch.mt,sch.count);
-            END LOOP;
-        END IF;
+      IF ARRAY_LENGTH(pair,1) IS NOT NULL THEN
+        RAISE NOTICE 'Pair is %', pair;
+        FOREACH j in ARRAY pair
+        LOOP
+          qtype:= EXECUTE "ARRAY(select distinct qtype from tb_question where assid=" || j || ')';
+          -- Loop through this for marks type and grade type and add up scores for assessments of type both
+          FOREACH typ in qtype
+          LOOP
+            maxmarks:=0;
+            IF typ=1 THEN
+              maxmarks:= maxmarks + EXECUTE "select sum(maxmarks)::int from tb_question where assid=" || j;
+            ELSE 
+              if typ=2 THEN
+                typ=0 -- Ensuring this points to grade type
+              END IF;
+
+              grade_arr:= EXECUTE "select distinct ('{'|| grade || '}')::text[] from tb_question where assid=" || j;
+              CASE 
+                WHEN grade_arr @> '{O,L,W,S,P}'::text[] THEN -- 0=Zero,L=25,W=50,S=75,P=100
+                  maxmarks:=100;
+                WHEN grade_arr @> '{1,0}'::text[] THEN -- max marks = count of Questions
+                  maxmarks:= maxmarks + EXECUTE "select count(id)::int from tb_question where assid=" || j;
+              END CASE;
+            END IF;
+            IF ARRAY_LENGTH(qtype,1) > 1 THEN
+              typ = 2; -- Ensuring this points to both type
+            END IF;
+            insert into asmnt_max_score(aid,atype,maxscore) values (j,typ,maxmarks);
+          END LOOP;
+        END LOOP;
+      END IF;
     END LOOP;
+  END LOOP;
 END;
+
 $$ language plpgsql;
 
-Refer choice of Programmes from klp-exp.py
-select agg_programme_cohorts(ARRAY[1,2,3,5,6,7,8,9,10,11,12,13,14,15,18,19,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,41,42,43,44,45,46,47,48,49]);
-*/
-
-
-
-
+-- Refer choice of Programmes from klp-exp.py
+select agg_max_score(ARRAY[1,2,3,5,6,7,8,9,10,11,12,13,14,15,18,19,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,41,42,43,44,45,46,47,48,49]);
