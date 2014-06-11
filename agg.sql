@@ -1,6 +1,6 @@
 ---------------------------------------------------------
-DROP TABLE IF EXISTS asmnt_pairs;
-CREATE TABLE asmnt_pairs (
+DROP TABLE IF EXISTS agg_asmnt_pairs;
+CREATE TABLE agg_asmnt_pairs (
      "pid" integer REFERENCES "tb_programme" ("id") ON DELETE CASCADE,
      "pname" varchar(300), 
      "ayid" integer,
@@ -9,88 +9,88 @@ CREATE TABLE asmnt_pairs (
      "class" varchar(24)
      );
 
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (1,'Reading',90,'2006-2007','{1,2,3,4}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (2,'NNG',1,'2007-2008','{5,9}','2');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (2,'NNG',1,'2007-2008','{6,10}','3');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (2,'NNG',1,'2007-2008','{7,11}','4');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (2,'NNG',1,'2007-2008','{8,12}','5');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (3,'NNG',2,'2008-2009','{13,17}','2');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (3,'NNG',2,'2008-2009','{14,18}','3');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (3,'NNG',2,'2008-2009','{15,19}','4');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (3,'NNG',2,'2008-2009','{16,20}','5');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (5,'Anganwadi',119,'2009-2010','{23,24}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (6,'English',119,'2009-2010','{25,26}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (7,'Reading-Ramnagara',119,'2009-2010','{27,29,28}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (8,'Reading-Dharwad',119,'2009-2010','{30,32,31}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (9,'NNG3',119,'2009-2010','{33,34}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (14,'NNGSupport',101,'2010-2011','{41,42}','4');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (14,'NNGSupport',101,'2010-2011','{43,44}','5');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (14,'NNGSupport',101,'2010-2011','{45,46}','4');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (14,'NNGSupport',101,'2010-2011','{47,48}','5');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (15,'Akshara English',101,'2010-2011','{49,50}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (18,'Anganwadi',101,'2010-2011','{56,57,58}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (19,'Reading',102,'2011-2012','{59,60,61}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (23,'English',102,'2011-2012','{65,75}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (23,'English',102,'2011-2012','{66,76}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (23,'English',102,'2011-2012','{67,77}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (24,'Akshara Ganitha',102,'2011-2012','{68,73}','4');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (24,'Akshara Ganitha',102,'2011-2012','{69,74}','5');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (25,'Anganwadi Assessment',102,'2011-2012','{70,79}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (26,'Hulbi-Dwd Anganwadi Assessment',102,'2011-2012','{71,78}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (27,'Control Hubli Dharwad Anganwadi',102,'2011-2012','{72,80}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (28,'Control Math',102,'2011-2012','{81,82,83}','4');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (28,'Control Math',102,'2011-2012','{84,85,86}','5');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (29,'Control English',102,'2011-2012','{87,88,89}','1');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (29,'Control English',102,'2011-2012','{90,91,92}','2');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (29,'Control English',102,'2011-2012','{93,94,95}','3');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (30,'Treatment Math',102,'2011-2012','{96,97,98}','4');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (30,'Treatment Math',102,'2011-2012','{99,100,101}','5');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (31,'Treatment English',102,'2011-2012','{102,103,104}','1');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (31,'Treatment English',102,'2011-2012','{105,106,107}','2');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (31,'Treatment English',102,'2011-2012','{108,109,110}','3');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (32,'RCT English',121,'2012-2013','{111,130,144}','1');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (32,'RCT English',121,'2012-2013','{112,136,145}','2');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (32,'RCT English',121,'2012-2013','{113,137,146}','3');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (32,'RCT English',121,'2012-2013','{114,138,147}','4');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (34,'RCT Math',121,'2012-2013','{115,131,139}','1');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (34,'RCT Math',121,'2012-2013','{116,132,140}','2');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (34,'RCT Math',121,'2012-2013','{117,133,141}','3');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (34,'RCT Math',121,'2012-2013','{118,134,142}','4');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (34,'RCT Math',121,'2012-2013','{119,135,143}','5');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (35,'Akshara Ganitha',121,'2012-2013','{120,150}','2');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (35,'Akshara Ganitha',121,'2012-2013','{121,151}','3');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (35,'Akshara Ganitha',121,'2012-2013','{122,152}','4');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (35,'Akshara Ganitha',121,'2012-2013','{123,153}','5');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (36,'Anganwadi',121,'2012-2013','{124,158}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (37,'Anganwadi-Bangalore',121,'2012-2013','{125,148}','Age 2.5-4.5');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (37,'Anganwadi-Bangalore',121,'2012-2013','{126,149}','Age 4.5-6');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (38,'English',121,'2012-2013','{127,154}','2');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (38,'English',121,'2012-2013','{128,155}','3');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (38,'English',121,'2012-2013','{129,156}','4');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (39,'Reading',121,'2012-2013','{157}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (41,'Anganwadi Infrastructure',121,'2012-2013','{162}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (42,'Infrastructure Survey',122,'2013-2014','{163}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (43,'Anganwadi-Indicator',122,'2013-2014','{164}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (43,'Anganwadi-Indicator',122,'2013-2014','{202}','null');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (44,'Control Treatment English',122,'2013-2014','{168,193,203}','1');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (44,'Control Treatment English',122,'2013-2014','{175,194,204}','2');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (44,'Control Treatment English',122,'2013-2014','{176,195,205}','3');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (44,'Control Treatment English',122,'2013-2014','{177,196,206}','4');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (45,'Control Treatment Maths',122,'2013-2014','{169,197,207}','1');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (45,'Control Treatment Maths',122,'2013-2014','{178,198,209}','2');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (45,'Control Treatment Maths',122,'2013-2014','{179,199,210}','3');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (45,'Control Treatment Maths',122,'2013-2014','{180,200,211}','4');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (45,'Control Treatment Maths',122,'2013-2014','{181,201,212}','5');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (46,'Reading',122,'2013-2014','{182,192}','4');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (47,'Akshara Ganita',122,'2013-2014','{183}','2');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (47,'Akshara Ganita',122,'2013-2014','{184}','3');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (47,'Akshara Ganita',122,'2013-2014','{185}','4');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (47,'Akshara Ganita',122,'2013-2014','{186}','5');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (48,'Akshara English',122,'2013-2014','{187}','2');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (48,'Akshara English',122,'2013-2014','{188}','3');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (48,'Akshara English',122,'2013-2014','{189}','4');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (49,'Anganwadi',122,'2013-2014','{190,218}','Age 2.5-4.5');
-insert into asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (49,'Anganwadi',122,'2013-2014','{191,219}','Age 4.5-6');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (1,'Reading',90,'2006-2007','{1,2,3,4}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (2,'NNG',1,'2007-2008','{5,9}','2');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (2,'NNG',1,'2007-2008','{6,10}','3');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (2,'NNG',1,'2007-2008','{7,11}','4');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (2,'NNG',1,'2007-2008','{8,12}','5');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (3,'NNG',2,'2008-2009','{13,17}','2');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (3,'NNG',2,'2008-2009','{14,18}','3');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (3,'NNG',2,'2008-2009','{15,19}','4');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (3,'NNG',2,'2008-2009','{16,20}','5');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (5,'Anganwadi',119,'2009-2010','{23,24}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (6,'English',119,'2009-2010','{25,26}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (7,'Reading-Ramnagara',119,'2009-2010','{27,29,28}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (8,'Reading-Dharwad',119,'2009-2010','{30,32,31}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (9,'NNG3',119,'2009-2010','{33,34}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (14,'NNGSupport',101,'2010-2011','{41,42}','4');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (14,'NNGSupport',101,'2010-2011','{43,44}','5');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (14,'NNGSupport',101,'2010-2011','{45,46}','4');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (14,'NNGSupport',101,'2010-2011','{47,48}','5');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (15,'Akshara English',101,'2010-2011','{49,50}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (18,'Anganwadi',101,'2010-2011','{56,57,58}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (19,'Reading',102,'2011-2012','{59,60,61}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (23,'English',102,'2011-2012','{65,75}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (23,'English',102,'2011-2012','{66,76}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (23,'English',102,'2011-2012','{67,77}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (24,'Akshara Ganitha',102,'2011-2012','{68,73}','4');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (24,'Akshara Ganitha',102,'2011-2012','{69,74}','5');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (25,'Anganwadi Assessment',102,'2011-2012','{70,79}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (26,'Hulbi-Dwd Anganwadi Assessment',102,'2011-2012','{71,78}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (27,'Control Hubli Dharwad Anganwadi',102,'2011-2012','{72,80}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (28,'Control Math',102,'2011-2012','{81,82,83}','4');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (28,'Control Math',102,'2011-2012','{84,85,86}','5');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (29,'Control English',102,'2011-2012','{87,88,89}','1');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (29,'Control English',102,'2011-2012','{90,91,92}','2');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (29,'Control English',102,'2011-2012','{93,94,95}','3');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (30,'Treatment Math',102,'2011-2012','{96,97,98}','4');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (30,'Treatment Math',102,'2011-2012','{99,100,101}','5');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (31,'Treatment English',102,'2011-2012','{102,103,104}','1');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (31,'Treatment English',102,'2011-2012','{105,106,107}','2');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (31,'Treatment English',102,'2011-2012','{108,109,110}','3');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (32,'RCT English',121,'2012-2013','{111,130,144}','1');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (32,'RCT English',121,'2012-2013','{112,136,145}','2');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (32,'RCT English',121,'2012-2013','{113,137,146}','3');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (32,'RCT English',121,'2012-2013','{114,138,147}','4');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (34,'RCT Math',121,'2012-2013','{115,131,139}','1');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (34,'RCT Math',121,'2012-2013','{116,132,140}','2');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (34,'RCT Math',121,'2012-2013','{117,133,141}','3');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (34,'RCT Math',121,'2012-2013','{118,134,142}','4');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (34,'RCT Math',121,'2012-2013','{119,135,143}','5');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (35,'Akshara Ganitha',121,'2012-2013','{120,150}','2');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (35,'Akshara Ganitha',121,'2012-2013','{121,151}','3');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (35,'Akshara Ganitha',121,'2012-2013','{122,152}','4');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (35,'Akshara Ganitha',121,'2012-2013','{123,153}','5');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (36,'Anganwadi',121,'2012-2013','{124,158}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (37,'Anganwadi-Bangalore',121,'2012-2013','{125,148}','Age 2.5-4.5');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (37,'Anganwadi-Bangalore',121,'2012-2013','{126,149}','Age 4.5-6');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (38,'English',121,'2012-2013','{127,154}','2');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (38,'English',121,'2012-2013','{128,155}','3');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (38,'English',121,'2012-2013','{129,156}','4');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (39,'Reading',121,'2012-2013','{157}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (41,'Anganwadi Infrastructure',121,'2012-2013','{162}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (42,'Infrastructure Survey',122,'2013-2014','{163}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (43,'Anganwadi-Indicator',122,'2013-2014','{164}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (43,'Anganwadi-Indicator',122,'2013-2014','{202}','null');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (44,'Control Treatment English',122,'2013-2014','{168,193,203}','1');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (44,'Control Treatment English',122,'2013-2014','{175,194,204}','2');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (44,'Control Treatment English',122,'2013-2014','{176,195,205}','3');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (44,'Control Treatment English',122,'2013-2014','{177,196,206}','4');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (45,'Control Treatment Maths',122,'2013-2014','{169,197,207}','1');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (45,'Control Treatment Maths',122,'2013-2014','{178,198,209}','2');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (45,'Control Treatment Maths',122,'2013-2014','{179,199,210}','3');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (45,'Control Treatment Maths',122,'2013-2014','{180,200,211}','4');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (45,'Control Treatment Maths',122,'2013-2014','{181,201,212}','5');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (46,'Reading',122,'2013-2014','{182,192}','4');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (47,'Akshara Ganita',122,'2013-2014','{183}','2');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (47,'Akshara Ganita',122,'2013-2014','{184}','3');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (47,'Akshara Ganita',122,'2013-2014','{185}','4');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (47,'Akshara Ganita',122,'2013-2014','{186}','5');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (48,'Akshara English',122,'2013-2014','{187}','2');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (48,'Akshara English',122,'2013-2014','{188}','3');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (48,'Akshara English',122,'2013-2014','{189}','4');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (49,'Anganwadi',122,'2013-2014','{190,218}','Age 2.5-4.5');
+insert into agg_asmnt_pairs (pid,pname,ayid,ayname,asmnts,class) values (49,'Anganwadi',122,'2013-2014','{191,219}','Age 4.5-6');
 
 
 -------------------------------------------------------------------------
@@ -228,7 +228,7 @@ BEGIN
 
     FOREACH i in ARRAY pgmids 
     LOOP
-        FOR pair in EXECUTE 'select distinct asmnts from asmnt_pairs where pid=' || i
+        FOR pair in EXECUTE 'select distinct asmnts from agg_asmnt_pairs where pid=' || i
         LOOP
             IF ARRAY_LENGTH(pair,1) IS NOT NULL THEN
                 RAISE NOTICE 'Pair is %', pair;
@@ -293,9 +293,9 @@ CREATE AGGREGATE median(anyelement) (
 ---------------------------------------------------------
 -- UTILITY FUNCTION FOR FINDING MAX SCORE FOR AN ASSESSMENT
 
-DROP TABLE IF EXISTS asmnt_max_score;
+DROP TABLE IF EXISTS agg_asmnt_maxscore;
 
-CREATE TABLE asmnt_max_score (
+CREATE TABLE agg_asmnt_maxscore (
   "aid" integer REFERENCES "tb_assessment" ("id") ON DELETE CASCADE,
   "atype" integer, --0 for Grade type, 1 for Marks type, 2 for both
   "maxscore" integer
@@ -304,45 +304,57 @@ CREATE TABLE asmnt_max_score (
 DROP FUNCTION agg_max_score(int[]);
 CREATE FUNCTION agg_max_score(pgmids int[]) RETURNS void AS $$
 DECLARE
-  qtype int[];
+  atype int[];
   typ int;
   questions int[];
-  maxmarks int;
+  maxscore int;
   grade_arr text[];
+  pair int[];
+  i int;
+  j int;
+  addmarks int;
 BEGIN
   FOREACH i in ARRAY pgmids 
   LOOP
-    FOR pair in EXECUTE 'select distinct asmnts from asmnt_pairs where pid=' || i
+    FOR pair in EXECUTE 'select distinct asmnts from agg_asmnt_pairs where pid=' || i
     LOOP
       IF ARRAY_LENGTH(pair,1) IS NOT NULL THEN
         RAISE NOTICE 'Pair is %', pair;
         FOREACH j in ARRAY pair
         LOOP
-          qtype:= EXECUTE "ARRAY(select distinct qtype from tb_question where assid=" || j || ')';
           -- Loop through this for marks type and grade type and add up scores for assessments of type both
-          FOREACH typ in qtype
+          -- Set assessment typt to 0 for Grade type, 1 for Marks, 2 for both
+          SELECT into atype ARRAY(select distinct qtype from tb_question where assid=j);
+          maxscore:=0;
+          FOREACH typ in ARRAY atype
           LOOP
-            maxmarks:=0;
+          --RAISE NOTICE 'Type is %', typ;
             IF typ=1 THEN
-              maxmarks:= maxmarks + EXECUTE "select sum(maxmarks)::int from tb_question where assid=" || j;
+              select into addmarks sum(maxmarks)::int from tb_question where assid=j;
+              maxscore:= maxscore + addmarks;
             ELSE 
-              if typ=2 THEN
-                typ=0 -- Ensuring this points to grade type
-              END IF;
-
-              grade_arr:= EXECUTE "select distinct ('{'|| grade || '}')::text[] from tb_question where assid=" || j;
+              select into grade_arr distinct ('{'|| grade || '}')::text[] from tb_question where assid=j;
               CASE 
                 WHEN grade_arr @> '{O,L,W,S,P}'::text[] THEN -- 0=Zero,L=25,W=50,S=75,P=100
-                  maxmarks:=100;
+                  maxscore:=100;
                 WHEN grade_arr @> '{1,0}'::text[] THEN -- max marks = count of Questions
-                  maxmarks:= maxmarks + EXECUTE "select count(id)::int from tb_question where assid=" || j;
+                  select into addmarks count(id)::int from tb_question where assid=j and qtype=typ;
+                  maxscore:= maxscore + addmarks;                  
+                  --RAISE NOTICE 'Came here into CASE 2 %',grade_arr;
+                ELSE 
+                  -- This CASE ignores Random GRADES such as {O}, {Y,U,N}, {U,H,M,L}- Some of which point to
+                  -- Not assessible questions such as attendance along with test scores, Parihara Bodhane paramter Y/N
+                  --RAISE NOTICE 'Came here into ELSE %',grade_arr;
               END CASE;
+              IF typ=2 THEN
+                typ := 0; -- Ensuring this points to grade type
+              END IF;
             END IF;
-            IF ARRAY_LENGTH(qtype,1) > 1 THEN
-              typ = 2; -- Ensuring this points to both type
+            IF ARRAY_LENGTH(atype,1) > 1 THEN
+              typ := 2; -- Ensuring this points to both type
             END IF;
-            insert into asmnt_max_score(aid,atype,maxscore) values (j,typ,maxmarks);
           END LOOP;
+        insert into agg_asmnt_maxscore(aid,atype,maxscore) values (j,typ,maxscore);
         END LOOP;
       END IF;
     END LOOP;
