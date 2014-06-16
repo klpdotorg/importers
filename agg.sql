@@ -365,3 +365,90 @@ $$ language plpgsql;
 
 -- Refer choice of Programmes from klp-exp.py
 select agg_max_score(ARRAY[1,2,3,5,6,7,8,9,10,11,12,13,14,15,18,19,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,41,42,43,44,45,46,47,48,49]);
+
+---------------------------------------------------------
+-- FUNCTION FOR CLASS LEVEL MEDIAN FOR AN ASSESSMENT
+
+DROP TABLE IF EXISTS agg_asmnt_class_median;
+
+CREATE TABLE agg_asmnt_class_median (
+  "pid" integer REFERENCES "tb_programme" ("id") ON DELETE CASCADE,
+  "aid" integer REFERENCES "tb_assessment" ("id") ON DELETE CASCADE,
+  "testtype" varchar(16),  -- PRE, POST, MID, OTHER
+  "schid" integer,
+  "class" varchar(24),
+  "medianscore" integer
+);
+
+DROP FUNCTION agg_class_median(int[]);
+CREATE FUNCTION agg_class_median(pgmids int[]) RETURNS void AS $$
+DECLARE
+  pair int[];
+  class text;
+  asmnt record;
+  i int;
+  j int;
+  grade_arr  text[];
+  school record;
+  query text;
+  testtype text;
+BEGIN
+  FOREACH i in ARRAY pgmids 
+  LOOP
+    FOR class,pair in EXECUTE 'select distinct class,asmnts from agg_asmnt_pairs where pid=' || i
+    LOOP
+      IF ARRAY_LENGTH(pair,1) IS NOT NULL THEN
+        RAISE NOTICE 'Pair is %', pair;
+        FOREACH j in ARRAY pair
+        LOOP
+          select into testtype (select CASE WHEN a.name ~ 'Post' THEN 'POST' WHEN a.name ~ 'Pre' 
+            THEN 'PRE' WHEN a.name ~ 'Mid' THEN 'MID' ELSE a.name END as aname from tb_assessment a 
+            where a.id=j);
+          select aid,atype,maxscore into asmnt from agg_asmnt_maxscore where aid=j;
+          IF asmnt.atype=0 THEN -- GRADE TYPE ASSESSMENT
+            select into grade_arr distinct ('{'|| grade || '}')::text[] from tb_question where assid=j;
+            CASE WHEN grade_arr @> '{O,L,W,S,P}'::text[] THEN -- 0=Zero,L=25,W=50,S=75,P=100
+                query:= 'select s.id as sid, c.name as clname, median(scores.markscored) as med from tb_school s, tb_class c, 
+                    tb_student_class sc,(select distinct se.objid as stuid, CASE when se.grade=''O'' then 0 
+                    when se.grade=''L'' then 25 when se.grade=''W'' then 50 when se.grade=''S'' then 75 else 100 
+                    end as markscored from tb_student_eval se where se.qid in (select distinct id from 
+                    tb_question where assid=' || j || ')) as scores where scores.stuid = sc.stuid and sc.clid = c.id 
+                    and c.sid = s.id group by s.id,c.name order by s.id, c.name';
+              WHEN grade_arr @> '{1,0}'::text[] THEN -- max marks = count of Questions
+                query:= 'select s.id as sid, c.name as clname, median(scores.markscored) as med from tb_school s, tb_class c, 
+                    tb_student_class sc,(select distinct se.objid as stuid,count(CASE WHEN se.grade::int=1 
+                    then 1 else null end) as markscored from tb_student_eval se where se.qid in 
+                    (select distinct id from tb_question where assid=' || j || ') group by se.objid) as scores
+                    where scores.stuid = sc.stuid and sc.clid = c.id 
+                    and c.sid = s.id group by s.id,c.name order by s.id, c.name';
+              ELSE
+            END CASE; 
+          ELSIF asmnt.atype=1 THEN -- MARKS TYPE ASSESSMENT
+            query:='select s.id as sid, c.name as clname, median(scores.markscored) as med from tb_school s, tb_class c, 
+                tb_student_class sc,(select distinct se.objid as stuid,sum(se.mark) as markscored 
+                from tb_student_eval se where se.qid in (select distinct id from tb_question 
+                where assid=' || j || ') group by se.objid) as scores where scores.stuid = sc.stuid and 
+                sc.clid = c.id and c.sid = s.id group by s.id,c.name order by s.id, c.name';
+          ELSE -- asmnt.atype=2 BOTH GRADE AND MARKS TYPE  
+            query:='select s.id as sid, c.name as clname, median(scores.markscored) as med from tb_school s, tb_class c, 
+                tb_student_class sc,(select distinct se.objid as stuid,sum(se.mark) as markscored 
+                from tb_student_eval se where se.qid in (select distinct id from tb_question 
+                where assid=' || j || ') group by se.objid) as scores where scores.stuid = sc.stuid and 
+                sc.clid = c.id and c.sid = s.id group by s.id,c.name order by s.id, c.name';
+          END IF;
+          FOR school in EXECUTE query 
+          LOOP
+            insert into agg_asmnt_class_median (pid,aid,testtype,schid,class,medianscore) 
+                  values (i,asmnt.aid,testtype,school.sid,school.clname,school.med/asmnt.maxscore*100::int);
+          END LOOP;
+        END LOOP;
+      END IF;
+    END LOOP;
+  END LOOP;
+END;
+
+$$ language plpgsql;
+-- Refer choice of Programmes from klp-exp.py
+select agg_class_median(ARRAY[1,2,3,5,6,7,8,9,10,11,12,13,14,15,18,19,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,41,42,43,44,45,46,47,48,49]);
+--select agg_class_median(ARRAY[35]);
+
