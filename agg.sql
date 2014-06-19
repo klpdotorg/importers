@@ -415,7 +415,7 @@ BEGIN
                     end as markscored ';
               WHEN grade_arr @> '{1,0}'::text[] THEN -- max marks = count of Questions
                 query:= query || '(select distinct se.objid as stuid,
-                    count(cast (nullif(trim(both '' '' from e.grade),'''')) as integer) as markscored ';
+                    count(cast (nullif(trim(both '' '' from e.grade),'''') as integer)) as markscored ';
               ELSE
             END CASE; 
           ELSIF asmnt.atype=1 THEN -- MARKS TYPE ASSESSMENT
@@ -424,7 +424,7 @@ BEGIN
             select into grade_arr distinct ('{'|| grade || '}')::text[] from tb_question where assid=j;
             CASE  WHEN grade_arr @> '{1,0}'::text[] THEN
               query:= query || '(select distinct se.objid as stuid,
-                  sum(se.mark)+count(cast (nullif(trim(both '' '' from e.grade),'''')) as integer) as markscored ';
+                  sum(se.mark)+count(cast (nullif(trim(both '' '' from e.grade),'''') as integer)) as markscored ';
             ELSE
               query:= query || '(select distinct se.objid as stuid, sum(se.mark) as markscored ';
             END CASE;
@@ -522,7 +522,7 @@ BEGIN
                     end as markscored ';
               WHEN grade_arr @> '{1,0}'::text[] THEN -- max marks = count of Questions
                 query:= query || '(select distinct se.objid as stuid,
-                  count(cast (nullif(trim(both '' '' from e.grade),'''')) as integer) as markscored ';
+                  count(cast (nullif(trim(both '' '' from e.grade),'''') as integer)) as markscored ';
               ELSE
             END CASE; 
           ELSIF asmnt.atype=1 THEN -- MARKS TYPE ASSESSMENT
@@ -531,7 +531,7 @@ BEGIN
             select into grade_arr distinct ('{'|| grade || '}')::text[] from tb_question where assid=j;
             CASE  WHEN grade_arr @> '{1,0}'::text[] THEN
               query:= query || '(select distinct se.objid as stuid,
-                  sum(se.mark)+count(cast (nullif(trim(both '' '' from e.grade),'''')) as integer) as markscored ';
+                  sum(se.mark)+count(cast (nullif(trim(both '' '' from e.grade),'''') as integer)) as markscored ';
             ELSE
               query:= query || '(select distinct se.objid as stuid, sum(se.mark) as markscored ';
             END CASE;
