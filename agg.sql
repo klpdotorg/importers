@@ -425,9 +425,9 @@ BEGIN
                     then 1 else null end) as markscored ';
           END IF;
           query := query || 'from tb_student_eval se where se.qid in (select distinct id from tb_question 
-                where assid=' || j || ') group by se.objid'
+                where assid=' || j || ') group by se.objid';
           IF asmnt.atype !=1 THEN
-            query := query || ',se.grade'
+            query := query || ',se.grade';
           END IF;
           query := query || ') as scores where scores.stuid = sc.stuid and 
                 sc.clid = c.id and c.sid = s.id group by s.id,c.name order by s.id, c.name';
@@ -528,9 +528,9 @@ BEGIN
           END IF;
 
           query := query || 'from tb_student_eval se where se.qid in (select distinct id from tb_question 
-                where assid=' || j || ') group by se.objid'
+                where assid=' || j || ') group by se.objid';
           IF asmnt.atype !=1 THEN
-            query := query || ',se.grade'
+            query := query || ',se.grade';
           END IF;
           query := query || ') as scores where scores.stuid = sc.stuid and 
                 sc.clid = c.id and c.sid = s.id and stu.id = sc.stuid and stu.cid= ch.id ';
