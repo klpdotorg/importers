@@ -291,6 +291,23 @@ CREATE AGGREGATE median(anyelement) (
 );
 
 ---------------------------------------------------------
+-- UTILITY FUNCTION FOR HANDLING ERRONEOUS GRADE VALUES
+
+CREATE OR REPLACE FUNCTION grade_to_int(v_input text)
+RETURNS INTEGER AS $$
+  DECLARE v_int_value INTEGER DEFAULT NULL;
+BEGIN
+    BEGIN
+        v_int_value := cast(nullif(trim(both '+' from trim(both '.' from trim(both ' ' from v_input))),'') as INTEGER);
+    EXCEPTION WHEN OTHERS THEN
+        RAISE NOTICE 'Invalid integer value: "%".  Returning NULL.', v_input;
+        RETURN NULL;
+    END;
+RETURN v_int_value;
+END;
+$$ LANGUAGE plpgsql;
+
+---------------------------------------------------------
 -- UTILITY FUNCTION FOR FINDING MAX SCORE FOR AN ASSESSMENT
 
 DROP TABLE IF EXISTS agg_asmnt_maxscore;
@@ -414,8 +431,7 @@ BEGIN
                     when se.grade=''L'' then 25 when se.grade=''W'' then 50 when se.grade=''S'' then 75 else 100 
                     end as markscored ';
               WHEN grade_arr @> '{1,0}'::text[] THEN -- max marks = count of Questions
-                query:= query || '(select distinct se.objid as stuid,
-                    count(cast (nullif(trim(both '' '' from se.grade),'''') as integer)) as markscored ';
+                query:= query || '(select distinct se.objid as stuid, count(grade_to_int(se.grade)) as markscored ';
               ELSE
             END CASE; 
           ELSIF asmnt.atype=1 THEN -- MARKS TYPE ASSESSMENT
@@ -424,7 +440,7 @@ BEGIN
             select into grade_arr distinct ('{'|| grade || '}')::text[] from tb_question where assid=j;
             CASE  WHEN grade_arr @> '{1,0}'::text[] THEN
               query:= query || '(select distinct se.objid as stuid,
-                  sum(se.mark)+count(cast (nullif(trim(both '' '' from se.grade),'''') as integer)) as markscored ';
+                  sum(se.mark) + count(grade_to_int(se.grade)) as markscored ';
             ELSE
               query:= query || '(select distinct se.objid as stuid, sum(se.mark) as markscored ';
             END CASE;
@@ -522,7 +538,7 @@ BEGIN
                     end as markscored ';
               WHEN grade_arr @> '{1,0}'::text[] THEN -- max marks = count of Questions
                 query:= query || '(select distinct se.objid as stuid,
-                  count(cast (nullif(trim(both '' '' from se.grade),'''') as integer)) as markscored ';
+                  count(grade_to_int(se.grade)) as markscored ';
               ELSE
             END CASE; 
           ELSIF asmnt.atype=1 THEN -- MARKS TYPE ASSESSMENT
@@ -531,7 +547,7 @@ BEGIN
             select into grade_arr distinct ('{'|| grade || '}')::text[] from tb_question where assid=j;
             CASE  WHEN grade_arr @> '{1,0}'::text[] THEN
               query:= query || '(select distinct se.objid as stuid,
-                  sum(se.mark)+count(cast (nullif(trim(both '' '' from se.grade),'''') as integer)) as markscored ';
+                  sum(se.mark) + count(grade_to_int(se.grade)) as markscored ';
             ELSE
               query:= query || '(select distinct se.objid as stuid, sum(se.mark) as markscored ';
             END CASE;
