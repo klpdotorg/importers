@@ -374,7 +374,7 @@ DROP TABLE IF EXISTS agg_asmnt_class_median;
 CREATE TABLE agg_asmnt_class_median (
   "pid" integer REFERENCES "tb_programme" ("id") ON DELETE CASCADE,
   "aid" integer REFERENCES "tb_assessment" ("id") ON DELETE CASCADE,
-  "testtype" varchar(16),  -- PRE, POST, MID, OTHER
+  "testtype" varchar(64),  -- PRE, POST, MID, OTHER
   "schid" integer,
   "class" varchar(24),
   "medianscore" integer
@@ -456,7 +456,7 @@ DROP TABLE IF EXISTS agg_asmnt_class_gender_median;
 CREATE TABLE agg_asmnt_class_gender_median (
   "pid" integer REFERENCES "tb_programme" ("id") ON DELETE CASCADE,
   "aid" integer REFERENCES "tb_assessment" ("id") ON DELETE CASCADE,
-  "testtype" varchar(16),  -- PRE, POST, MID, OTHER
+  "testtype" varchar(64),  -- PRE, POST, MID, OTHER
   "schid" integer,
   "class" varchar(24),
   "gender" varchar(10),
@@ -468,7 +468,7 @@ DROP TABLE IF EXISTS agg_asmnt_class_mt_median;
 CREATE TABLE agg_asmnt_class_mt_median (
   "pid" integer REFERENCES "tb_programme" ("id") ON DELETE CASCADE,
   "aid" integer REFERENCES "tb_assessment" ("id") ON DELETE CASCADE,
-  "testtype" varchar(16),  -- PRE, POST, MID, OTHER
+  "testtype" varchar(64),  -- PRE, POST, MID, OTHER
   "schid" integer,
   "class" varchar(24),
   "mt" varchar(24),
@@ -546,7 +546,7 @@ BEGIN
               insert into agg_asmnt_class_gender_median (pid,aid,testtype,schid,class,gender,medianscore) 
                   values (i,asmnt.aid,testtype,school.sid,school.clname,school.gender,school.med/asmnt.maxscore*100::int);
             ELSE
-              insert into agg_asmnt_class_gender_median (pid,aid,testtype,schid,class,mt,medianscore) 
+              insert into agg_asmnt_class_mt_median (pid,aid,testtype,schid,class,mt,medianscore) 
                   values (i,asmnt.aid,testtype,school.sid,school.clname,school.mt,school.med/asmnt.maxscore*100::int);
             END IF;
           END LOOP;
