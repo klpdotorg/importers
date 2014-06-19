@@ -414,7 +414,7 @@ BEGIN
                     when se.grade=''L'' then 25 when se.grade=''W'' then 50 when se.grade=''S'' then 75 else 100 
                     end as markscored ';
               WHEN grade_arr @> '{1,0}'::text[] THEN -- max marks = count of Questions
-                query:= query || '(select distinct se.objid as stuid,count(CASE WHEN se.grade::int=1 
+                query:= query || '(select distinct se.objid as stuid,count(CASE WHEN cast (nullif(trim(both '' '' from e.grade),'''') as integer=1 
                     then 1 else null end) as markscored ';
               ELSE
             END CASE; 
@@ -424,7 +424,7 @@ BEGIN
             select into grade_arr distinct ('{'|| grade || '}')::text[] from tb_question where assid=j;
             CASE  WHEN grade_arr @> '{1,0}'::text[] THEN
               query:= query || '(select distinct se.objid as stuid,
-                  sum(se.mark)+count(CASE WHEN se.grade::int=1 then 1 else null end) as markscored ';
+                  sum(se.mark)+count(CASE WHEN cast (nullif(trim(both '' '' from e.grade),'''') as integer=1 then 1 else null end) as markscored ';
             ELSE
               query:= query || '(select distinct se.objid as stuid, sum(se.mark) as markscored ';
             END CASE;
@@ -521,7 +521,7 @@ BEGIN
                     when se.grade=''L'' then 25 when se.grade=''W'' then 50 when se.grade=''S'' then 75 else 100 
                     end as markscored ';
               WHEN grade_arr @> '{1,0}'::text[] THEN -- max marks = count of Questions
-                query:= query || '(select distinct se.objid as stuid,count(CASE WHEN se.grade::int=1 
+                query:= query || '(select distinct se.objid as stuid,count(CASE WHEN cast (nullif(trim(both '' '' from e.grade),'''') as integer=1 
                     then 1 else null end) as markscored ';
               ELSE
             END CASE; 
@@ -531,7 +531,7 @@ BEGIN
             select into grade_arr distinct ('{'|| grade || '}')::text[] from tb_question where assid=j;
             CASE  WHEN grade_arr @> '{1,0}'::text[] THEN
               query:= query || '(select distinct se.objid as stuid,
-                  sum(se.mark)+count(CASE WHEN se.grade::int=1 then 1 else null end) as markscored ';
+                  sum(se.mark)+count(CASE WHEN cast (nullif(trim(both '' '' from e.grade),'''') as integer=1 then 1 else null end) as markscored ';
             ELSE
               query:= query || '(select distinct se.objid as stuid, sum(se.mark) as markscored ';
             END CASE;
