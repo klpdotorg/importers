@@ -421,8 +421,13 @@ BEGIN
           ELSIF asmnt.atype=1 THEN -- MARKS TYPE ASSESSMENT
             query:= query || '(select distinct se.objid as stuid,sum(se.mark) as markscored ';
           ELSE -- asmnt.atype=2 BOTH GRADE AND MARKS TYPE  
-            query:= query || '(select distinct se.objid as stuid,sum(se.mark) + count(CASE WHEN se.grade::int=1 
-                    then 1 else null end) as markscored ';
+            select into grade_arr distinct ('{'|| grade || '}')::text[] from tb_question where assid=j;
+            CASE  WHEN grade_arr @> '{1,0}'::text[] THEN
+              query:= query || '(select distinct se.objid as stuid,
+                  sum(se.mark)+count(CASE WHEN se.grade::int=1 then 1 else null end) as markscored ';
+            ELSE
+              query:= query || '(select distinct se.objid as stuid, sum(se.mark) as markscored ';
+            END CASE;
           END IF;
           query := query || 'from tb_student_eval se where se.qid in (select distinct id from tb_question 
                 where assid=' || j || ') group by se.objid';
@@ -523,8 +528,13 @@ BEGIN
           ELSIF asmnt.atype=1 THEN -- MARKS TYPE ASSESSMENT
             query:= query || '(select distinct se.objid as stuid,sum(se.mark) as markscored ';
           ELSE -- asmnt.atype=2 BOTH GRADE AND MARKS TYPE  
-            query:= query || '(select distinct se.objid as stuid,sum(se.mark) + count(CASE WHEN se.grade::int=1 
-                    then 1 else null end) as markscored ';
+            select into grade_arr distinct ('{'|| grade || '}')::text[] from tb_question where assid=j;
+            CASE  WHEN grade_arr @> '{1,0}'::text[] THEN
+              query:= query || '(select distinct se.objid as stuid,
+                  sum(se.mark)+count(CASE WHEN se.grade::int=1 then 1 else null end) as markscored ';
+            ELSE
+              query:= query || '(select distinct se.objid as stuid, sum(se.mark) as markscored ';
+            END CASE;
           END IF;
 
           query := query || 'from tb_student_eval se where se.qid in (select distinct id from tb_question 
