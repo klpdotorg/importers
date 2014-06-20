@@ -405,6 +405,7 @@ DECLARE
   asmnt record;
   i int;
   j int;
+  k int;
   grade_arr  text[];
   school record;
   query text;
@@ -446,7 +447,14 @@ BEGIN
             END CASE;
           END IF;
           query := query || 'from tb_student_eval se where se.qid in (select distinct id from tb_question 
-                where assid=' || j || ') group by se.objid';
+                where assid=' || j || ') and'
+          FOREACH k in ARRAY pair
+          LOOP
+              IF j!=k THEN
+                query:= query||' and se.objid in (select se.objid from tb_student_eval se,tb_question q where se.qid=q.id and (se.grade is not null or se.mark is not null) and q.assid = '||k||')';
+              END IF;
+          END LOOP; 
+          query := query || 'group by se.objid';
           IF asmnt.atype !=1 THEN
             query := query || ',se.grade';
           END IF;
@@ -504,6 +512,7 @@ DECLARE
   asmnt record;
   i int;
   j int;
+  k int;
   grade_arr  text[];
   school record;
   query text;
@@ -552,9 +561,16 @@ BEGIN
               query:= query || '(select distinct se.objid as stuid, sum(se.mark) as markscored ';
             END CASE;
           END IF;
-
           query := query || 'from tb_student_eval se where se.qid in (select distinct id from tb_question 
-                where assid=' || j || ') group by se.objid';
+                where assid=' || j || ') and'
+          FOREACH k in ARRAY pair
+          LOOP
+              IF j!=k THEN
+                query:= query||' and se.objid in (select se.objid from tb_student_eval se,tb_question q where se.qid=q.id and (se.grade is not null or se.mark is not null) and q.assid = '||k||')';
+              END IF;
+          END LOOP; 
+          query := query || 'group by se.objid';
+
           IF asmnt.atype !=1 THEN
             query := query || ',se.grade';
           END IF;
