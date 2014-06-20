@@ -447,7 +447,7 @@ BEGIN
             END CASE;
           END IF;
           query := query || 'from tb_student_eval se where se.qid in (select distinct id from tb_question 
-                where assid=' || j || ') and'
+                where assid=' || j || ') ';
           FOREACH k in ARRAY pair
           LOOP
               IF j!=k THEN
@@ -562,7 +562,7 @@ BEGIN
             END CASE;
           END IF;
           query := query || 'from tb_student_eval se where se.qid in (select distinct id from tb_question 
-                where assid=' || j || ') and'
+                where assid=' || j || ') ';
           FOREACH k in ARRAY pair
           LOOP
               IF j!=k THEN
