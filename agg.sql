@@ -180,7 +180,7 @@ BEGIN
                     tb_class cl, tb_student_class sc, tb_child c, tb_school s 
                     WHERE se.objid=stu.id and se.qid=q.id and q.assid=ass.id and sc.stuid=stu.id 
                     and sc.clid=cl.id AND cl.sid = s.id AND stu.cid = c.id and ass.pid=p.id and p.id = ANY(pgmids) 
-                    and (se.grade is not null or se.mark is not null) 
+                    and (se.grade is not null or se.mark is not null) and sc.status=1
                     GROUP BY s.id, ass.id,p.id, cl.name,c.sex,c.mt
     LOOP
       RAISE NOTICE 'Processing Programe ID %', asmnt.pid;
@@ -234,7 +234,7 @@ BEGIN
                 RAISE NOTICE 'Pair is %', pair;
                 FOREACH j in ARRAY pair
                 LOOP
-                    query:='SELECT s.id as id,ass.id as aid,ass.pid as pid,cl.name as clname,c.sex as sex, c.mt as mt, count(distinct stu.id) AS count FROM tb_student_eval se,tb_question q,tb_assessment ass,tb_student stu, tb_class cl, tb_student_class sc, tb_child c, tb_school s WHERE se.objid=stu.id and se.qid=q.id and q.assid=ass.id and sc.stuid=stu.id and sc.clid=cl.id AND cl.sid = s.id AND stu.cid = c.id and (se.grade is not null or se.mark is not null)';
+                    query:='SELECT s.id as id,ass.id as aid,ass.pid as pid,cl.name as clname,c.sex as sex, c.mt as mt, count(distinct stu.id) AS count FROM tb_student_eval se,tb_question q,tb_assessment ass,tb_student stu, tb_class cl, tb_student_class sc, tb_child c, tb_school s WHERE se.objid=stu.id and se.qid=q.id and q.assid=ass.id and sc.stuid=stu.id and sc.clid=cl.id AND cl.sid = s.id AND stu.cid = c.id and sc.status=1 and (se.grade is not null or se.mark is not null)';
                     query:= query || ' and ass.id=' || j;
 
                     FOREACH k in ARRAY pair
@@ -459,7 +459,7 @@ BEGIN
             query := query || ',se.grade';
           END IF;
           query := query || ') as scores where scores.stuid = sc.stuid and 
-                sc.clid = c.id and c.sid = s.id group by s.id,c.name order by s.id, c.name';
+                sc.clid = c.id and c.sid = s.id and sc.status=1 group by s.id,c.name order by s.id, c.name';
           --RAISE NOTICE 'Query is %',query;
           FOR school in EXECUTE query 
           LOOP
@@ -575,7 +575,7 @@ BEGIN
             query := query || ',se.grade';
           END IF;
           query := query || ') as scores where scores.stuid = sc.stuid and 
-                sc.clid = c.id and c.sid = s.id and stu.id = sc.stuid and stu.cid= ch.id ';
+                sc.clid = c.id and c.sid = s.id and stu.id = sc.stuid and stu.cid= ch.id and sc.status=1 ';
           IF grpby = 'gender' THEN
             query := query || 'group by s.id,c.name,ch.sex order by s.id, c.name, ch.sex';
           ELSE
