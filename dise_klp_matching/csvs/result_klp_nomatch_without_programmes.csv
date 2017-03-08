@@ -1,0 +1,612 @@
+district|block|cluster|klpid|schoolname|disecode
+ bagalkot          | badami             | nandikeswara              |1963| UGLPS NANDIKESHWAR                                         |29020111306
+ bagalkot          | bagalkot           | kbs gaddankeri            |2087| GOVT LPS DEVANAL DOREGOL TOTA new)                         | 
+ bagalkot          | bagalkot           | kbs gaddankeri            |2095| GOVTHPS NAKARAGUNDI R.C.                                   | 
+ bagalkot          | bagalkot           | kbs kaladagi              |2120| LPS TOTADA SCHOOL SOKANADAGI                               | 
+ bagalkot          | bagalkot           | legislature m school no4  |2047| LPS LAXMIGUDI ARIEA BGK new)                               | 
+ bagalkot          | bagalkot           | legislature m school no4  |2048| LPS VINAYAK NAGAR BGK new)                                 | 
+ bagalkot          | bagalkot           | urdu crc east             |2181| GOVT LPS MUCHAKHANDI CROSS BGK                             |29020211113
+ bagalkot          | bagalkot           | urdu crc east             |2198| GOVT UB LPS TIMMAPUR                                       | 
+ bagalkot          | bilagi             | kundargi                  |2223| KBLPS NOORAPPANAVAR TOTA                                   | 
+ bagalkot          | bilagi             | kundargi                  |2235| LPS BABAKHAN TOTA SHIRAGUPPI                               | 
+ bagalkot          | bilagi             | sunag                     |2247| GOVT KGS HERAKAL                                           | 
+ bagalkot          | bilagi             | sunag                     |2258| GOVT LPS TOLAMATTI TOTA 2                                  |29020606103
+ bagalkot          | bilagi             | sunag                     |2246| GOVT UBLPS HERKAL                                          |29020603102
+ bagalkot          | bilagi             | sunag                     |30276| GOVT URDU LPS MURNAL RC                                    | 
+ bagalkot          | bilagi             | teggi                     |2285| GOVT HPS BUDIHAL SG                                        | 
+ bagalkot          | bilagi             | teggi                     |2282| GOVT UBLPS BADAGI                                          | 
+ bagalkot          | bilagi             | yadahalli                 |2311| BASAVESHWAR PRY.SCH.GALAGALI                               |29020601909
+ bagalkot          | hunagund           | dhannur                   |2381| GOVT KGLPS IDDALAGI                                        | 
+ bagalkot          | hunagund           | hungund                   |2400| GOVT LPS DPEP, NAVANAGAR HUN                               | 
+ bagalkot          | hunagund           | ilkal (urdu crc)          |2567| GOVT KBLPS 3 ILKAL                                         | 
+ bagalkot          | hunagund           | ilkal (urdu crc)          |2585| GOVT UBLPS K SANGAM                                        |29020204003
+ bagalkot          | hunagund           | ilkal (urdu crc)          |2584| GOVT UBLPS RAKKASAGI                                       | 
+ bagalkot          | hunagund           | ilkal (urdu crc)          |30282| KBS Ilkal Govt Hospital                                    | 
+ bagalkot          | hunagund           | ilkal (urdu crc)          |2574| UBHPS N0.3 ILKAL                                           | 
+ bagalkot          | hunagund           | sulibhavi                 |30233| GOVT KBHPS MULLUR                                          | 
+ bagalkot          | hunagund           | sulibhavi                 |30232| KGHPS Aiholli                                              | 
+ bagalkot          | jamakhandi         | hulyal                    |2832| GOVT HPS MAREGUDDI                                         | 
+ bagalkot          | jamakhandi         | hunnur                    |2686| GOVT KG HPS HUNNUR                                         | 
+ bagalkot          | jamakhandi         | rabakavi                  |2589| GOVT LPS 2 HALINGALI                                       | 
+ bagalkot          | jamakhandi         | rabakavi                  |2593| KBLPS HANAGANDI                                            | 
+ bagalkot          | jamakhandi         | rampur                    |2648| GOVT HPS YARAGATTI                                         | 
+ bagalkot          | jamakhandi         | rampur                    |2649| GOVT KBLPS YARAGATTI TOTA                                  | 
+ bagalkot          | mudhol             | hebbal                    |3043| GOVT GIRLS NAVODAYA PRI.SCH. HEBBAL                        |29021102705
+ bagalkot          | mudhol             | lokapur                   |2863| LPS GUJARI TOTA, DADANATTI                                 | 
+ bagalkot          | mudhol             | mahalingapur kgs          |2990| GOVT UBLPS GADADAGALLI MAHALINGAPUR                        | 
+ bagalkot          | mudhol             | mahalingapur kgs          |2980| GOVT UBLPS MADABHAVI                                       |29021104503
+ bagalkot          | mudhol             | mahalingapur kgs          |2986| KBLPS T SCHOOL MARAPUR                                     | 
+ bagalkot          | mudhol             | mahalingapur mps          |3009| GOVT HPS SIDDAPUR TOTA 2                                   | 
+ bagalkot          | mudhol             | mahalingapur mps          |3002| GOVT LPS BELAGALI K TOTA                                   | 
+ bagalkot          | mudhol             | mahalingapur mps          |3005| GOVT UBS BELAGALI                                          | 
+ bagalkot          | mudhol             | mahalingapur mps          |3022| LPS KENGERI MADDI MAHALINGAPUR                             |29021113102
+ bagalkot          | mudhol             | mahalingapur mps          |3023| UBLPS KENGERI MADDI MAHALINGAP                             | 
+ bagalkot          | mudhol             | mudhol rm school          |2884| GOVT HPS BALLUR R.C                                        | 
+ bagalkot          | mudhol             | mudhol rm school          |2876| GOVT MARATHI BOYS HPS MUDHOL                               | 
+ bagalkot          | mudhol             | surgaon                   |2953| GOVT UBLPS SHIROL                                          | 
+ bagalkot          | mudhol             | surgaon                   |2957| KADASIDDESHWAR HPS SHIROL                                  |29021107006
+ bagalkot          | mudhol             | urdu mudhol               |2902| UBLPS MUDHOL                                               | 
+ bagalkot          | mudhol             | yadahalli ingalagi        |2931| GOVT LPS ANANDPABU ASRAM YADAH                             | 
+ bagalkot          | mudhol             | yadahalli ingalagi        |2924| GOVT.LPS SONNAD.MACHAKANUR new)                            | 
+ bangalore u north | north-1            | byadara halli             |36975| LOHITH HIGH SCHOOL                                         | 
+ bangalore u north | north-1            | chikkabidara kallu        |37034| TAKKAR BAPA HS MACHOHALLI                                  | 
+ bangalore u north | north-1            | heggana halli             |36922| DEEPASHRI SCHOOL                                           | 
+ bangalore u north | north-1            | kamakshi palya            |37077| GHS POLICE COLONY MAGDAI ROAD                              | 
+ bangalore u north | north-1            | kamakshi palya            |37078| SRI MARUTHI VIDYA MANDIRA                                  | 
+ bangalore u north | north-1            | krishnananda nagara       |36916| TAGORE MEMORIAL HPS YESHWANTHPU                            | 
+ bangalore u north | north-1            | laggere                   |36919| K N GEETHA KHPS                                            | 
+ bangalore u north | north-1            | rajajinagar               |36924| AMBEDKAR KANNADA H S MAHALAKSH                             | 
+ bangalore u north | north-1            | rajajinagar               |36923| BASAVESHWARA KHPS                                          | 
+ bangalore u north | north-1            | rajajinagar               |36921| P.V.P GIRLS HIGH SCH RAJAJI                                | 
+ bangalore u north | north-1            | shiva nagar               |36918| BASAVESHWARA BOYS HIGH SCH                                 | 
+ bangalore u north | north-1            | shiva nagar               |37033| DEENASEVA HPS KAMALANAGAR                                  | 
+ bangalore u north | north-1            | ullau new town            |37079| SUJATHA VIDYA SAMSTE HS                                    | 
+ bangalore u north | north-2            | palace guttahalli         |36929| M S RAMAIAH H S GOKULA                                     | 
+ bangalore u north | north-2            | palace guttahalli         |36953| MAHILA HPS MALLESHWARAM                                    | 
+ bangalore u north | north-2            | palace guttahalli         |36956| RAGHAVENDRA H S 3RD CROSS MALLESHWARAM                     | 
+ bangalore u north | north-2            | prakashnagar              |37032| BASAVESHWARA GIRLS HPS RAJAJINAGAR                         | 
+ bangalore u north | north-2            | sheshadripuram            |36961| KUMARA PARK HIGH SCHOOL                                    | 
+ bangalore u north | north-2            | sheshadripuram            |36963| SARASWATHI VIDYANIKETHAN HPS M                             | 
+ bangalore u north | north-2            | sheshadripuram            |36958| VISHWAKALANIKETHAN MEPS N NAGAR                            | 
+ bangalore u north | north-2            | sri ramapuram             |37097|  BAPUJI RESIDENTIAL HIGH SCHOOL                            | 
+ bangalore u north | north-2            | yeshwanthpur              |36930| ANANDA SOCIAL AND EDU SOCIETY                              | 
+ bangalore u north | north-2            | yeshwanthpur              |36928| CHANDRODAYA EHPS YESHVANTHPURA                             | 
+ bangalore u north | north-2            | yeshwanthpur              |36931| SRI DEENADAYAL HPS YESHWANTHPU                             | 
+ bangalore u north | north-3            | banaswadi                 |37055| PARIJATHA HIGH SCHOOL                                      | 
+ bangalore u north | north-3            | banaswadi                 |36978| PARIJATHA PRIMARY SCHOOL                                   | 
+ bangalore u north | north-3            | banaswadi                 |36969| SIDDARATHA COMPOSITE                                       | 
+ bangalore u north | north-3            | banaswadi                 |37042| SIDDARATHA HPS LR PURAM                                    | 
+ bangalore u north | north-3            | d.j.halli                 |36934| SRI MALLIKARJUNA SWAMY H S                                 | 
+ bangalore u north | north-3            | d.j.halli                 |36970| ST.MARYS ENGLISH HR.PRIMARY SCHOOL                         | 
+ bangalore u north | north-3            | frazer town               |36995| AMBUJAMMAL GADI CHELVARAYA H.S                             | 
+ bangalore u north | north-3            | frazer town               |37031| INDIRANAGAR HIGH SCHOOL                                    | 
+ bangalore u north | north-3            | frazer town               |36977| MARIYANEKETHAN HIGH SCHOOL                                 | 
+ bangalore u north | north-3            | frazer town               |36980| MEG UP GRADED PRI SCHOOL RANGA                             | 
+ bangalore u north | north-3            | frazer town               |36997| R.B.A.N.MS HIGH SCHOOL                                     | 
+ bangalore u north | north-3            | frazer town               |36998| RBANMS BIFURCATED H.S GANGADHARA                           | 
+ bangalore u north | north-3            | frazer town               |36993| RBANMS GIVINDAMMAL HPS                                     | 
+ bangalore u north | north-3            | frazer town               |36988| RBANMS MIDDELRBANMS MIDDLE SCH DICAN SON R                 | 
+ bangalore u north | north-3            | frazer town               |37004| RBANMS THIRUKULATHRA HPS                                   | 
+ bangalore u north | north-3            | frazer town               |36986| RBANMS THIRUKULATHRA LPS                                   | 
+ bangalore u north | north-3            | frazer town               |36982| TAGORE MONTASSORY HPS                                      | 
+ bangalore u north | north-3            | j.c nagar                 |36932| BBMP HIGH SCHOOL GANGANAGAR                                | 
+ bangalore u north | north-3            | j.c nagar                 |36933| MAMATHA SCH HMT LAY OUT                                    | 
+ bangalore u north | north-3            | j.c nagar                 |36985| VIDYANIKENTHAN H S MATTADAHALLI                            | 
+ bangalore u north | north-3            | k.b.sandra                |37058| BENGALURU TAMIL SANGHA HIGH SCHOOL                         | 
+ bangalore u north | north-3            | k.b.sandra                |36979| GANDHI SAMRAKA HPS KAVALABYRASANDRA                        | 
+ bangalore u north | north-3            | k.b.sandra                |36981| GANDHI SMARAKA H S K.B SANDRA                              | 
+ bangalore u north | north-3            | k.b.sandra                |37053| VOKKALIGARA SANGHA HPS                                     | 
+ bangalore u north | north-3            | oph road                  |36991| B K A M ENG SCHOOL                                         | 
+ bangalore u north | north-3            | oph road                  |36983| HINDU BALIKA HPS                                           | 
+ bangalore u north | north-3            | oph road                  |37044| ST ALLOYSIUS HS COXTOWN                                    | 
+ bangalore u north | north-3            | oph road                  |37047| ST ROCK GHPS CLEAVELAND TOWN                               | 
+ bangalore u north | north-3            | oph road                  |37049| ST.ANTHONYS BOYS H S CLEVELAND T                           | 
+ bangalore u north | north-3            | pottery town              |37052| FATHIMA GIRLS HIGH SCHOOL                                  | 
+ bangalore u north | north-3            | pottery town              |36984| QUWATHUL ISLAM H S BENSON ROAD                             | 
+ bangalore u north | north-3            | pottery town              |37060| SRI RAMAKRISHNA VIVEKANNDA THPS                            | 
+ bangalore u north | north-3            | pottery town              |36996| ST ALPHONSUS HIGH SCHOOL                                   | 
+ bangalore u north | north-3            | pottery town              |37056| ST. JOSEPH CONVENT GIRLS H S                               | 
+ bangalore u north | north-3            | vasanthnagar              |36974| AL-AMEEN KAMBAL POSH KHPS & HS                             | 
+ bangalore u north | north-3            | vasanthnagar              |36990| B.S.A.P GIRLS H S TASKER TOWN                              | 
+ bangalore u north | north-3            | vasanthnagar              |36994| SMT KAMALA BAI EHPS QUEENS ROAD                            | 
+ bangalore u north | north-3            | vasanthnagar              |36992| ST.XAVIERS BOYS HIGH SCH                                   | 
+ bangalore u north | north-3            | vasanthnagar              |36987| VIDYANIKENTHAN H S MATTADAHALLI                            | 
+ bangalore u north | north-4            | abbigere                  |36999| ANNAPOORNA HIGH SCHOOL                                     | 
+ bangalore u north | north-4            | byatarayanpura            |37000| ST JEMS HPS MARIYANNA PALYA                                | 
+ bangalore u north | north-4            | byatarayanpura            |36937| VIVEKANANDA PUBLIC SCHOOL                                  | 
+ bangalore u north | north-4            | yelehanka new town        |37001| VIDHYA SAGAR HIGHER PRIMARY SCHOOL                         | 
+ bangalore u north | north-4            | yelehanka old town        |36936| DIGVIJAYA HIGH SCH                                         | 
+ bangalore u north | north-4            | yelehanka old town        |36935| SRI NEELAKANTESHWARA K T T HPS                             | 
+ bangalore u south | anekal             | bannerugatta              |36947| CHAMPAKADHAMASWMY HIGH SCHOOL                              | 
+ bangalore u south | anekal             | byagadadena halli         |32399| GKLPS KOONMADIVALA                                         |29200427801
+ bangalore u south | anekal             | hebbagodi                 |36946| B E S SCHOOL HPS                                           | 
+ bangalore u south | anekal             | sab mangala               |35475| GKLPS ASHRAYAMANE YOJANE                                   | 
+ bangalore u south | south-1            | basavanagudi              |37054| APSHS NR COLONY                                            | 
+ bangalore u south | south-1            | basavanagudi              |37050| MMK HPS NR COLONY                                          | 
+ bangalore u south | south-1            | basavanagudi              |36945| RASHTRIYA VIDYALAYA HS                                     | 
+ bangalore u south | south-1            | doddagollarahatti         |37051| BHANU HS                                                   | 
+ bangalore u south | south-1            | doddagollarahatti         |37057| GKLPS GANTAKANADODDI                                       | 
+ bangalore u south | south-1            | hosakerehalli             |36943| BANASHANKARI VIDYA PEETA                                   | 
+ bangalore u south | south-1            | hosakerehalli             |36942| SAHAKARI VIDYA KENDRA                                      | 
+ bangalore u south | south-1            | hosakerehalli             |36944| SRI CHOWDESHWARI ENG HIGH SCHOOL                           | 
+ bangalore u south | south-1            | kagglipura                |37006| APS HS SOMANAHALLI                                         | 
+ bangalore u south | south-1            | kagglipura                |36938| NAVAJYOTHI HIGH SCHOOL                                     | 
+ bangalore u south | south-1            | kagglipura                |36939| NAVAJYOTHI HPS                                             | 
+ bangalore u south | south-1            | kagglipura                |37009| SRI GIRI MARUTHI MAKKAL MANDIRA                            | 
+ bangalore u south | south-1            | kagglipura                |37007| ST FRANCIS XAVEIR HIGH SCHOOL                              | 
+ bangalore u south | south-1            | karisandra                |32979| GULPS J P NAGAR                                            | 
+ bangalore u south | south-1            | kumbalagodu               |37045| VIDYA VIKASA KENDRA GERUPALYA                              | 
+ bangalore u south | south-1            | mallatha halli            |37095|  RAJESHWARI HS KENCHENAHALLI(AIDED)                        | 
+ bangalore u south | south-1            | mallatha halli            |37094|  RAJESHWARI VIDYA SCHOOL                                   | 
+ bangalore u south | south-1            | mallatha halli            |36941| KANAKA KANNADA HPS                                         | 
+ bangalore u south | south-1            | mallatha halli            |36917| P.V.P ENGLISH PRI &. HIGH SCHOLL                           | 
+ bangalore u south | south-1            | sri nagara                |37046| MAHILA SEVA SAMAJA HIGH SCHOOL KR ROAD                     | 
+ bangalore u south | south-1            | utara halli               |37039| DAYANANDA KHPS.                                            | 
+ bangalore u south | south-1            | utara halli               |37038| DAYANANDA SAGAR ENG HIGH SCH                               | 
+ bangalore u south | south-2            | k.p.agrahara              |37028| BBMP HIGH SCHOOL                                           | 
+ bangalore u south | south-2            | k.p.agrahara              |37027| KARNATAKA VIDYA VARDHAKA                                   | 
+ bangalore u south | south-2            | k.p.agrahara              |37069| SANGMESHA VIDYA KENDRA HS                                  | 
+ bangalore u south | south-2            | kalasipalya               |36949| R K S HPS                                                  | 
+ bangalore u south | south-2            | kalasipalya               |37068| ST JOSEPH HPS                                              | 
+ bangalore u south | south-2            | kalasipalya               |36948| TIPPU EDUCATION SOCITY                                     | 
+ bangalore u south | south-3            | begur                     |37091|  GNANAPRAKASHAM KHPS BILEKALLI                             | 
+ bangalore u south | south-3            | begur                     |37075| LAYOLA HPS KALENA AGRAHARA                                 | 
+ bangalore u south | south-3            | begur                     |37030| ST TERESA HPS                                              | 
+ bangalore u south | south-3            | begur                     |37029| ST TERESA HS                                               | 
+ bangalore u south | south-3            | dommaluru                 |37043| BANGALORE MONTESSRY HPS                                    | 
+ bangalore u south | south-3            | dommaluru                 |37061| ST ANNE'S GIRLS HIGH SCHOOL                                | 
+ bangalore u south | south-3            | dommaluru                 |37063| ST ANNE'S HPS GIRLS SCHOOL                                 | 
+ bangalore u south | south-3            | konana kunte              |37074| JSS HPS KONANAKUNTE                                        | 
+ bangalore u south | south-3            | lalbagh siddapura         |37099|  SHANTHI KHPS VINAYAKANAGAR                                | 
+ bangalore u south | south-3            | lalbagh siddapura         |36954| GANGAMMA HOMBEGOWDA GIRLS HIGH SCHOOL                      | 
+ bangalore u south | south-3            | lalbagh siddapura         |37072| GMPS AKKI TIMMANAHALLI                                     | 
+ bangalore u south | south-3            | lalbagh siddapura         |36955| HOMBE GOWDA BOYS HIGH SCHOOL                               | 
+ bangalore u south | south-3            | lalbagh siddapura         |36957| RANI SARALADEVI HIGH SCHOOL                                | 
+ bangalore u south | south-3            | lalbagh siddapura         |36964| RANI SARALADEVI HPS                                        | 
+ bangalore u south | south-3            | lalbagh siddapura         |37101| SAMATHAVADA KHPS                                           | 
+ bangalore u south | south-3            | lalbagh siddapura         |37100| ST ANDRUS KHPS                                             | 
+ bangalore u south | south-3            | madivala                  |37096|  PATEL HPS                                                 | 
+ bangalore u south | south-3            | madivala                  |36952| R S MADIVALA                                               | 
+ bangalore u south | south-3            | madivala                  |36971| SANGAMESHWARA HPS                                          | 
+ bangalore u south | south-3            | madivala                  |36951| SRI SATHYANARAYANA HPS                                     | 
+ bangalore u south | south-3            | madivala                  |37070| VIDYA JYOTHI KHPS                                          | 
+ bangalore u south | south-3            | yadiyur                   |36966| J S S HIGH SCHOOL                                          | 
+ bangalore u south | south-3            | yadiyur                   |36962| N V S K HIGH SCHOOL                                        | 
+ bangalore u south | south-3            | yellukunte                |37092|  SVS HPS HONGASANDRA                                       | 
+ bangalore u south | south-3            | yellukunte                |36960| SRI CHANNAKESHAVA HIGH SCHOOL                              | 
+ bangalore u south | south-3            | yellukunte                |36959| SRI CHANNAKESHAVA HPS                                      | 
+ bangalore u south | south-4            | dodda kannahalli          |37090|  ANJANDARI HIGH SCHOOL                                     | 
+ bangalore u south | south-4            | dodda kannahalli          |37036| DR AMBEDKER HIGH SCHOOL                                    | 
+ bangalore u south | south-4            | dodda kannahalli          |37041| RENUKA HIGH SCHOOL                                         | 
+ bangalore u south | south-4            | immadihalli               |37059| RAJ VEERA MADAKARI NAYAKA HS R G HALLI                     | 
+ bangalore u south | south-4            | jeevan bima nagar         |37093|  VISHWESHVARIAH HIGH SCHOOL                                | 
+ bangalore u south | south-4            | jeevan bima nagar         |37019| DEVANI AMIMAL TAMIL HPS VIMANP                             | 
+ bangalore u south | south-4            | jeevan bima nagar         |37020| HAL EAST PRIMARY SCHOOL                                    | 
+ bangalore u south | south-4            | jeevan bima nagar         |37025| HAL WEST PRIMARY SCHOOL                                    | 
+ bangalore u south | south-4            | jeevan bima nagar         |37017| KAIRALI NILAYAM HIGH SCHOOL HAL                            | 
+ bangalore u south | south-4            | jeevan bima nagar         |37016| SACRED HERAT HIGH SCHOOL                                   | 
+ bangalore u south | south-4            | jeevan bima nagar         |37023| THPS VIMANAPURA                                            | 
+ bangalore u south | south-4            | jeevan bima nagar         |37024| VEERABHADRA SWAMI HPS VIBUTHIP                             | 
+ bangalore u south | south-4            | jeevan bima nagar         |37018| VIMANAPUR HIGH SCHOOL HAL                                  | 
+ bangalore u south | south-4            | jodihuskar                |37064| SUNDARI AMMAL HS                                           | 
+ bangalore u south | south-4            | k r pura                  |37010| BVNHS HIGH SCHOOL                                          | 
+ bangalore u south | south-4            | k r pura                  |37026| ITI VIDYA MANDIRA HIGH SCHOOL                              | 
+ bangalore u south | south-4            | k r pura                  |37013| ITI VIDYAMANDIRA KANNADA                                   | 
+ bangalore u south | south-4            | k r pura                  |37011| ST ANTHONY HIGH SCHOOL T C PALYA                           | 
+ bangalore u south | south-4            | k r pura                  |37066| ST TERESA HPS                                              | 
+ bangalore u south | south-4            | k r pura                  |37022| ST THEREASA HPS T C PALYA                                  | 
+ bangalore u south | south-4            | marath halli              |37067| YUVAKA VIKASA HS                                           | 
+ bangalore u south | south-4            | ramamurthy nagar          |37040| MANU HIGHER PRIMARY SCHOOL                                 | 
+ bangalore u south | south-4            | ramamurthy nagar          |37014| VIKASA KANNADA HIGH SCHOOL                                 | 
+ belgaum           | bailhongal         | ambadgatti                |1792| MissionSchool,IndraNagar,100ft. road                       | 
+ belgaum           | bailhongal         | ambadgatti                |1799| Ravenshaw School                                           | 
+ bellary           | kudligi            | gachinamatt kottur        |3813| GULPS KOTTUR                                               |29120605005
+ bellary           | sandur             | bhujanga nagar            |38183| GLPS   KAMMATHUR                                           |29120702901
+ bellary           | sandur             | chornur                   |4036| GUHPS CHORANOOR                                            |29120701801
+ bidar             | bhalki             | mehakar                   |5082| GOVT. HPS MAR. BOLEGAON                                    | 
+ bidar             | bidar              | gadagi                    |38800| GOVT HPS HAMILAPUR                                         |29050405201
+ bijapur           | basavan  bagewadi  | alamatti d s              |27694| UNAIDED B.M.N LPS ALAMATTI RS                              |29030300418
+ bijapur           | basavan  bagewadi  | basavana bagewadi         |27973| GOVT. KBLPS B BAGEWADI LT 6                                |29030323801
+ bijapur           | basavan  bagewadi  | ingaleshwar               |30166| GLPS SHIVANAND NAGAR                                       | 
+ bijapur           | basavan  bagewadi  | narasalagi                |27893| GOVT UBLPS BYLAL                                           | 
+ bijapur           | basavan  bagewadi  | yalawar                   |27950| GOVT UBLPS YALAWAR                                         | 
+ bijapur           | bijapur  rural     | gunadal                   |28170| GLPS HANUMASAGR KRASA DEVAR GENNUR                         | 
+ bijapur           | bijapur  rural     | gunadal                   |28184| GOVT LPS KATRAL                                            |29030506501
+ bijapur           | bijapur  rural     | kannur                    |28237| GOVT LPS HIREKURBAR VASTI KANNUR                           | 
+ bijapur           | bijapur  rural     | mamadapur                 |28282| GLPS GADAPUR JAINA VASTI UPPALADINN                        | 
+ bijapur           | bijapur  rural     | shivanagi urdu            |28098| GOVT.L.P.S JAKATADAR VASTI ITTANGIH                        |29030504809
+ bijapur           | bijapur city       | ubmps no 01 dawalat koti  |29508| UBLPS KHURESI COLONY, BIJAPUR                              |29031400141
+ bijapur           | chadachan          | chadachan                 |29332| GOVT UBS D NIMBARGI                                        | 
+ bijapur           | chadachan          | chadachan(urdu)           |29408| GOVT. ULPS REVATAGAON                                      | 
+ bijapur           | chadachan          | horti                     |29258| GOVT HPS SHIRAGUR INAM                                     | 
+ bijapur           | chadachan          | horti                     |29253| GOVT LPS SAVALA VASTI                                      | 
+ bijapur           | chadachan          | horti                     |29254| GOVT LPS SAVALYAL VASTI SATALAGAO                          |29031301803
+ bijapur           | chadachan          | horti                     |31195| LPS KOTNAL.K.V                                             | 
+ bijapur           | chadachan          | horti                     |29267| PRIVATE LPS G WASTI JIGANIVANI                             |29031303009
+ bijapur           | chadachan          | jigajivanagi              |29382| GOVT LPS JIGAJIVANI LT 4                                   | 
+ bijapur           | chadachan          | nivaragi                  |29282| LPS SALMALGI V REVATAGOAN                                  | 
+ bijapur           | indi               | agarakhed                 |28385| GOVT L.P.S. SANGMESHWAR VASTI                              | 
+ bijapur           | indi               | atharga                   |28393| LPS GHANTI VASTI ATHARGA                                   | 
+ bijapur           | indi               | chikkabevanur             |28465| GOVT LPS CHOUDHARI VSTI CHI.BEVANUR                        | 
+ bijapur           | indi               | indi (kannada)            |28624| GOVT LPS DIGGIBHAVI INDI                                   | 
+ bijapur           | indi               | nad kd                    |28529| LPS SHIRSHYAD HK                                           | 
+ bijapur           | indi               | salotagi                  |28560| GOVT HPS MIRAGI                                            | 
+ bijapur           | indi               | salotagi                  |28558| GOVT LPS NAGUR VASTI KHEDAGI                               | 
+ bijapur           | indi               | salotagi                  |28577| GOVT LPS PUJARI VASTI SALOTAGI                             | 
+ bijapur           | indi               | tadwalaga                 |28609| GOVT LPS M KALAVANT VST TADWALGA                           | 
+ bijapur           | muddebihal         | basarakod                 |28641| GOVT UBLPS BASARAKOD                                       | 
+ bijapur           | muddebihal         | dhavalagi                 |28698| GOVT LPS ASHRAY COLONY MADIKESHWAR                         | 
+ bijapur           | muddebihal         | hullur                    |28668| GOVT LPS HANDRAGALL                                        |29031005902
+ bijapur           | muddebihal         | hullur                    |28683| UBLPS KANDAGANUR                                           |29031008303
+ bijapur           | muddebihal         | muddebihal                |28783| GOVT LPS SHIROL                                            |29031013601
+ bijapur           | muddebihal         | nalatawad                 |28805| GOVT LPS NAGARABETT                                        |29031012001
+ bijapur           | muddebihal         | talikoti                  |28724| GOVT HPS BOMMANAHALLI                                      | 
+ bijapur           | sindagi            | hittinahalli              |29109| GOVT HPS SURAGIHALLI                                       |29031212901
+ bijapur           | sindagi            | kalakeri                  |28944| GOVT LPS AMOSHASIDDA KERUTGI LT VAS                        | 
+ bijapur           | sindagi            | kalakeri                  |28943| LINGAN GOUD BIRADAR VASTI KERUTGI                          | 
+ bijapur           | sindagi            | malaghan                  |29156| GOVT LPS HUMANABAD VASTI MANGALUR                          | 
+ bijapur           | sindagi            | malaghan                  |29145| GOVT LPS TANDA VST D.NAVADAGI                              | 
+ bijapur           | sindagi            | malaghan                  |29148| HIRAMATA HPS GABASAVALAGI                                  |29031204606
+ bijapur           | sindagi            | moratagi                  |29168| GOVT LPS KERURHOSUR                                        | 
+ bijapur           | sindagi            | sindagi                   |28904| GOVT KBLPS MANNUR T.VASTI OTH                              |29031210101
+ bijapur           | sindagi            | sindagi                   |28918| KGBV SINDAGI                                               | 
+ bijapur           | sindagi            | sindagi                   |29923| UBHPS DEVANAGANVA                                          |29031204103
+ chamrajnagar      | chamaraja nagar    | arakala vadi              |31108| GLPS MELURU-SASUVE HALLI                                   |29270110401
+ chamrajnagar      | chamaraja nagar    | badanaguppe               |6374| GLPS SANNEGOWADANAHUNDI                                    |29270106403
+ chamrajnagar      | chamaraja nagar    | chamarajanagar - i        |6623|  GHPS URDU COMPELSARY                                      |29270102302
+ chamrajnagar      | chamaraja nagar    | chandaka vadi             |6500| GHPS SARAGUR MOLE                                          |29270112001
+ chamrajnagar      | chamaraja nagar    | haradana halli            |29925| GLPS BEVANA THALAPURA                                      |29270109701
+ chamrajnagar      | chamaraja nagar    | haradana halli            |29958| GLPS BEVENAPURA                                            | 
+ chamrajnagar      | chamaraja nagar    | santhe marahalli          |6584| GHPS KEMPANAPURA                                           |29270117801
+ chamrajnagar      | chamaraja nagar    | udigala                   |6433| GHPS KILAGERE                                              |29270111201
+ chamrajnagar      | chamaraja nagar    | udigala                   |6431| GHPS MADHALAVADI                                           |29270110801
+ chamrajnagar      | chamaraja nagar    | ummatturu                 |6555| GHPS GANAGANUR                                             |29270115601
+ chamrajnagar      | chamaraja nagar    | venkataiana chathra       |29951| GHPS BASAVAPURA                                            |29270109301
+ chamrajnagar      | gundlupet          | agathagowdanahalli        |6804| GHPS MANCHANA HALLI                                        |29270200801
+ chamrajnagar      | gundlupet          | bheemanabeedu             |6631| GHPS MALLAYANPURA                                          | 
+ chamrajnagar      | gundlupet          | bommalapura               |29982| GHPS BHOMMALAPURA                                          | 
+ chamrajnagar      | gundlupet          | hangala                   |6784| GHPS PUTTANA PURA                                          |29270204301
+ chamrajnagar      | gundlupet          | hangala                   |29976| GHPS PUTTANAPUR                                            |29270204301
+ chamrajnagar      | gundlupet          | kabbahalli                |6664| GLPS PARAMAPUR                                             |29270211601
+ chamrajnagar      | hanur              | lokkanahalli              |6995| GHPS KOLLEGAL                                              | 
+ chamrajnagar      | hanur              | martalli                  |29927| GHPS HALEMARTHALLI                                         |29271307701
+ chamrajnagar      | kollegal           | kamagere                  |30032| G.H.P.S. KAMAGERE KOLLEGALA                                |29270510001
+ chamrajnagar      | kollegal           | kamagere                  |30033| G.L.P.S. LAKKSANHALLI                                      | 
+ chamrajnagar      | kollegal           | kamagere                  |6821| GHPS                                                       |29270504901
+ chamrajnagar      | kollegal           | kollegal-1                |6863| GHPS HAMPAPURA                                             | 
+ chamrajnagar      | kollegal           | kollegal-1                |6872| GLPS                                                       | 
+ chamrajnagar      | kollegal           | kollegal-1                |6881| GLPS                                                       |29270521901
+ chamrajnagar      | kollegal           | kollegal-1                |29865| GOVT TOWN HPS KOLLEGAL                                     | 
+ chamrajnagar      | kollegal           | kothanur                  |6860| GLPSURDU                                                   |29270519402
+ chamrajnagar      | kollegal           | kunthur                   |6834| GHPS                                                       |29270503101
+ chamrajnagar      | kollegal           | kunthur                   |6833| GHPS                                                       |29270500701
+ chamrajnagar      | kollegal           | martalli                  |6907| GLPS                                                       | 
+ chamrajnagar      | kollegal           | sathegala                 |6906| GLPS                                                       |29270521101
+ chamrajnagar      | kollegal           | sathegala                 |6904| GLPS                                                       |29270518201
+ chamrajnagar      | kollegal           | sathegala                 |6972| GLPS C.R NAGAR                                             | 
+ chamrajnagar      | yelandur           | duggatti                  |6945| GHPS Y.K.MOLE                                              |29271205601
+ chamrajnagar      | yelandur           | gumballi                  |6961| GULPS YARAGAMBALLI                                         |29271203503
+ chamrajnagar      | yelandur           | maddur                    |6917| GLPS BOODE THITTU -2                                       |29271201902
+ chamrajnagar      | yelandur           | yelandur                  |6925| GULPS YARIYUR                                              | 
+ chikballapur      | bagepally          | achaganapalli             |10489| GLPS PULAKUNTLAPALLI                                       |29290116803
+ chikballapur      | bagepally          | billur                    |10260| GLPS ADINARAYANAPURA                                       |29290119403
+ chikballapur      | bagepally          | billur                    |10252| GLPS DIGGINAIKANAPALLI                                     |29290105501
+ chikballapur      | bagepally          | chakavelu                 |10282| GLPS MANJUNATHAPURA                                        |29290110204
+ chikballapur      | bagepally          | chakavelu                 |10274| GLPS RAJAVANDLAPALLI                                       |29290103010
+ chikballapur      | bagepally          | chakavelu                 |10267| GULP S CHAKAVELU                                           |29290103001
+ chikballapur      | bagepally          | chelur                    |10311| GLPS GUNDAMVARIPALLI                                       |29290117702
+ chikballapur      | bagepally          | chelur                    |10310| GLPS RAGIMAKALAPALLI                                       |29290117301
+ chikballapur      | bagepally          | chelur                    |10304| S T ASHRAMA SCHOOL                                         |29290113404
+ chikballapur      | bagepally          | gulur                     |10333| GLPS ANJANAPURA                                            |29290113602
+ chikballapur      | bagepally          | marganukunte              |10419| GLPS MUMADIVARIPALLI                                       |29290116203
+ chikballapur      | bagepally          | mittemari                 |10338| GHPS ACHEPALLI                                             |29290100301
+ chikballapur      | bagepally          | palyakere                 |10499| GLPS GUNDAMVARIPALLI                                       | 
+ chikballapur      | bagepally          | somanathapura             |10464| GLPS BUDALAPALLI                                           |29290119104
+ chikballapur      | bagepally          | somanathapura             |10466| GLPS GOTLAPALLI                                            |29290119106
+ chikballapur      | bagepally          | somanathapura             |10469| GLPS MARIMAKALAPALLI                                       |29290119109
+ chikballapur      | bagepally          | yallampalli               |10777| GLPS YADAHALLI                                             | 
+ chikballapur      | chikkaballapur     | chikkaballapur            |10671| GUHP S MAIN CHIKKABALLAPUR                                 | 
+ chikballapur      | chikkaballapur     | mandikal                  |10594| GLPS HONNAGIRIYAPPANAHALLI                                 |29290325201
+ chikballapur      | chikkaballapur     | mandikal                  |10574| GLPS HOSAHALLI                                             |29290310201
+ chikballapur      | chikkaballapur     | nandi                     |10541| GLPS . BOMMANAHALLY                                        |29290304001
+ chikballapur      | chikkaballapur     | vaddrapalya               |10735| GLPS SUSEPALYA                                             |29290302001
+ chikballapur      | chikkaballapur     | vaddrapalya               |10753| GLPS YERRMARANAHALLI                                       | 
+ chikballapur      | chintamani         | batlahalli                |10893| GLPS CHANNARAYANAHALLI                                     |29290406501
+ chikballapur      | chintamani         | batlahalli                |10899| GLPS KARIYAPPALLI                                          |29290403106
+ chikballapur      | chintamani         | buradagunte               |11002| GUHP S PAPATHIMMANAHALLI                                   |29290429501
+ chikballapur      | chintamani         | chilakalanerpu            |10959| GLPS NERADAGUNTAPALLI                                      | 
+ chikballapur      | chintamani         | chintamani                |30678| GLPS CHINTAPALLI                                           |29290445401
+ chikballapur      | chintamani         | chintamani                |10801| GUHP S K R EXTENSION                                       | 
+ chikballapur      | chintamani         | k raguttahalli            |10920| GLPS GOLLAHALLI                                            |29290411701
+ chikballapur      | chintamani         | kaiwara                   |10783| GLPS HOSAHUDYA                                             |29290415501
+ chikballapur      | chintamani         | talagavara                |11044| GHPS SANTHEKALLAHALLI                                      |29290431202
+ chikballapur      | chintamani         | talagavara                |11048| GULP S TALAGAVARA                                          |29290433402
+ chikballapur      | chintamani         | yagavakote                |10846| GHPS YANUMALAPADI                                          |29290436502
+ chikballapur      | chintamani         | yagavakote                |30680| GUHPS YARAYYAGARAHALLI                                     | 
+ chikballapur      | gowribidanur       | alakapura                 |11519| GLPS RAYAMAKALAHALLI                                       |29290519601
+ chikballapur      | gowribidanur       | alakapura                 |29849| GLPS SOOLIGUTTI TANDA                                      | 
+ chikballapur      | gowribidanur       | alipura                   |11415| GLPS MARATIPALYA                                           | 
+ chikballapur      | gowribidanur       | d palya                   |11430| GLPS D PALYA                                               |29290504908
+ chikballapur      | gowribidanur       | d palya                   |11426| GLPS DINNEMELINAHALLI                                      |29290504902
+ chikballapur      | gowribidanur       | d palya                   |11436| GLPS LAKSHMIPURA                                           | 
+ chikballapur      | gowribidanur       | d palya                   |11437| GULP S MYLYA                                               | 
+ chikballapur      | gowribidanur       | gowribidanur              |11226| GHPS HIREBIDANUR                                           | 
+ chikballapur      | gowribidanur       | gowribidanur              |11222| GLPS SAKKARE KARKANE                                       | 
+ chikballapur      | gowribidanur       | idagur                    |11146| GHPS HALAGANAHALLY                                         |29290508101
+ chikballapur      | gowribidanur       | manchenahalli             |11272| GLPS BUDIVANTHANAHALLI                                     |29290503001
+ chikballapur      | gowribidanur       | manchenahalli             |11292| GLPS M HOSAHALLI                                           |29290515502
+ chikballapur      | gowribidanur       | nagaragere                |11304| GLPS BANDAMEEDATHANDA                                      |29290504702
+ chikballapur      | gowribidanur       | nagaragere                |11307| GLPS JIKALAVARAPALLI                                       | 
+ chikballapur      | gowribidanur       | thondebavi                |11474| GLPS BHOOMENAHALLI (THONDEBAVI                             |29290523401
+ chikballapur      | gowribidanur       | thondebavi                |11450| GLPS CHIKKAMALLEKERE                                       | 
+ chikballapur      | gowribidanur       | thondebavi                |11468| GUHP S THONDEBHAVI                                         |29290521502
+ chikballapur      | gudibanda          | hampasandra               |11585| GHPS ADINARAYANAPURA                                       |29290600101
+ chikballapur      | gudibanda          | hampasandra               |11595| GLPS KADENAHALLI DINNE                                     | 
+ chikballapur      | gudibanda          | hampasandra               |11608| GLPS SANJEEVARAYANAHALLI                                   |29290608301
+ chikballapur      | sidlaghatta        | ablodu                    |29789| GHPS BYARAGANAHALLI                                        | 
+ chikballapur      | sidlaghatta        | basettyhalli              |11727| GLPS ANUR THIMMANAHALLI                                    |29291101501
+ chikballapur      | sidlaghatta        | jangamakote               |11711| GLPS HOSAHALLI                                             | 
+ chikballapur      | sidlaghatta        | melur                     |11682| GLPS ANOOR HUNASENAHALLI                                   |29291101401
+ chikballapur      | sidlaghatta        | sadali                    |11636| GLPD KONDAPPAGARAHALLI                                     | 
+ chikballapur      | sidlaghatta        | sadali                    |11635| GLPS JARUGAHALLI                                           | 
+ chitradurga       | challakere         | b.n.pura                  |12380| GLPS KENCHAPPA NAGARA (new)                                | 
+ chitradurga       | challakere         | challakere north          |12559| GUHPS                                                      |29130221202
+ chitradurga       | challakere         | challakere north          |12556| MADAKARI HPS                                               |29130220701
+ chitradurga       | challakere         | devareddihalli            |29934| GLPS KOVAL                                                 | 
+ chitradurga       | challakere         | gopanahalli               |12453| GLPS KEREMUNDALAHATTY(NEW)                                 | 
+ chitradurga       | challakere         | gopanahalli               |12451| HPS HEGGERE                                                | 
+ chitradurga       | challakere         | gopanahalli               |12446| LPS AJJIKATTE                                              | 
+ chitradurga       | challakere         | gopanahalli               |12440| LPS NANDAPURA                                              | 
+ chitradurga       | challakere         | mallurahalli              |29960| GHPS OBAYYANHTTI                                           | 
+ chitradurga       | challakere         | nayakanahatti             |12219| GHPS KANNADA                                               |29130202102
+ chitradurga       | challakere         | nayakanahatti             |29961| GHPS KUNTAKOLAMANAHALLI                                    | 
+ chitradurga       | challakere         | parashurampura            |12374| LPS LNS COLONY                                             | 
+ chitradurga       | challakere         | talaku                    |30023| G.L.P.S BHIMANAKERE A.K. COLONY                            | 
+ chitradurga       | challakere         | talaku                    |30022| G.L.P.S YARAMANCHAYANHATTI                                 | 
+ chitradurga       | challakere         | talaku                    |12279| LPS BHIMANAKERE-A.K.COLONY                                 | 
+ chitradurga       | chitradurga        | belagatta                 |12178| GOVERNMENT MODEL H.P.S                                     |29130128402
+ chitradurga       | chitradurga        | bharamasagara             |12070| GHPS                                                       |29130121301
+ chitradurga       | chitradurga        | bharamasagara             |12068| GHPS                                                       |29130121001
+ chitradurga       | chitradurga        | bharamasagara             |12069| GHPS                                                       |29130121201
+ chitradurga       | chitradurga        | bharamasagara             |12083| GHPS                                                       |29130122501
+ chitradurga       | chitradurga        | bharamasagara             |12064| GHPS                                                       |29130120801
+ chitradurga       | chitradurga        | bharamasagara             |12076| GLPS                                                       |29130121801
+ chitradurga       | chitradurga        | bharamasagara             |12071| GLPS                                                       |29130121403
+ chitradurga       | chitradurga        | bharamasagara             |12067| GLPS                                                       |29130120901
+ chitradurga       | chitradurga        | bharamasagara             |12077| GLPS                                                       |29130121901
+ chitradurga       | chitradurga        | bharamasagara             |12075| GLPS                                                       |29130121701
+ chitradurga       | chitradurga        | bharamasagara             |12074| GLPS                                                       |29130121601
+ chitradurga       | chitradurga        | bharamasagara             |12065| GUHPS                                                      |29130120802
+ chitradurga       | chitradurga        | bharamasagara             |12072| GULPS                                                      |29130121502
+ chitradurga       | chitradurga        | chikkabennur              |12135| GHPS                                                       |29130123301
+ chitradurga       | chitradurga        | chikkabennur              |12146| GHPS                                                       |29130124401
+ chitradurga       | chitradurga        | chikkabennur              |12145| GHPS                                                       |29130124301
+ chitradurga       | chitradurga        | chikkabennur              |12159| GLPS                                                       |29130125601
+ chitradurga       | chitradurga        | chikkabennur              |12153| GULPS KYASAPURA                                            | 
+ chitradurga       | chitradurga        | chikkagondanahalli        |11926| (new)G.L.P.S , KANNADA, GOWRAMMANAH                        | 
+ chitradurga       | chitradurga        | chitradurga north         |12186| GULPS KARUVINAKATTE                                        | 
+ chitradurga       | chitradurga        | chitradurga north         |12196| HPGS GURUJANAHATTI                                         | 
+ chitradurga       | chitradurga        | chitradurga north         |12188| HPS BHEMAPPANAYAKA                                         |29130126101
+ chitradurga       | chitradurga        | chitradurga north         |12192| NGHPS                                                      |29130126502
+ chitradurga       | chitradurga        | chitradurga north         |12194| PPS                                                        |29130126601
+ chitradurga       | chitradurga        | chitradurga north         |12197| UHPS GURUJANAHATTI                                         | 
+ chitradurga       | chitradurga        | chitradurga north         |12190| UHPS KAZIMAHALLA                                           | 
+ chitradurga       | chitradurga        | d.s.halli                 |12053| GHPS                                                       |29130109501
+ chitradurga       | chitradurga        | d.s.halli                 |12043| GHPS                                                       |29130108501
+ chitradurga       | chitradurga        | d.s.halli                 |12063| GLPS                                                       |29130110601
+ chitradurga       | chitradurga        | hireguntanur              |11974| GHPS                                                       |29130112501
+ chitradurga       | chitradurga        | hireguntanur              |11954| GHPS                                                       |29130110801
+ chitradurga       | chitradurga        | hireguntanur              |11971| GLPS                                                       |29130112201
+ chitradurga       | chitradurga        | hireguntanur              |11963| GLPS                                                       |29130111501
+ chitradurga       | chitradurga        | hireguntanur              |11961| GLPS                                                       |29130111301
+ chitradurga       | chitradurga        | hireguntanur              |11973| GLPS                                                       |29130112401
+ chitradurga       | chitradurga        | hireguntanur              |11980| GLPS                                                       |29130113101
+ chitradurga       | chitradurga        | hireguntanur              |11970| GLPS                                                       | 
+ chitradurga       | chitradurga        | hireguntanur              |11967| GUHPS                                                      |29130111802
+ chitradurga       | chitradurga        | hireguntanur              |11953| GULPS                                                      |29130110702
+ chitradurga       | chitradurga        | m.k.hatti                 |12120| GHPS                                                       | 
+ chitradurga       | chitradurga        | m.k.hatti                 |12122| GHPS                                                       |29130116601
+ chitradurga       | chitradurga        | m.k.hatti                 |29825| GHPS KAVADIGARAHALLY                                       | 
+ chitradurga       | chitradurga        | m.k.hatti                 |29826| GHPS MALAPPANAHATI                                         | 
+ chitradurga       | chitradurga        | m.k.hatti                 |29828| GHPS MEDEHALLY                                             | 
+ chitradurga       | chitradurga        | m.k.hatti                 |12117| GHPS MURUGARAJENDRA NAGAR                                  | 
+ chitradurga       | chitradurga        | m.k.hatti                 |29833| GHPS MURUGARAJENDRANAGAR                                   | 
+ chitradurga       | chitradurga        | m.k.hatti                 |29832| GHPS SIBARA                                                | 
+ chitradurga       | chitradurga        | m.k.hatti                 |12129| GLPS                                                       |29130117301
+ chitradurga       | chitradurga        | m.k.hatti                 |29829| GLPS MATADAKURABARAHATTI                                   | 
+ chitradurga       | chitradurga        | m.k.hatti                 |12115| GMHPS GUTTINADU                                            | 
+ chitradurga       | chitradurga        | m.k.hatti                 |12113| GUHPS MATADAKURUBARAHATTI                                  | 
+ chitradurga       | chitradurga        | madakaripura              |12025| GHPS                                                       | 
+ chitradurga       | chitradurga        | madakaripura              |12032| GHPS                                                       | 
+ chitradurga       | chitradurga        | madakaripura              |12023| GHPS                                                       |29130118301
+ chitradurga       | chitradurga        | madakaripura              |12024| GHPS                                                       |29130118501
+ chitradurga       | chitradurga        | madakaripura              |12031| GHPS                                                       | 
+ chitradurga       | chitradurga        | madakaripura              |12012| GHPS                                                       |29130117501
+ chitradurga       | chitradurga        | madakaripura              |31075| GHPS DYVAMMANAHALLY                                        | 
+ chitradurga       | chitradurga        | madakaripura              |12038| GHPS HOSA KALLAHALLY                                       | 
+ chitradurga       | chitradurga        | madakaripura              |12035| GHPS KASAVARAHATTI                                         | 
+ chitradurga       | chitradurga        | madakaripura              |31077| GHPS MADAKARIPURA                                          | 
+ chitradurga       | chitradurga        | madakaripura              |31074| GHPS THOPURA MALEGE                                        | 
+ chitradurga       | chitradurga        | madakaripura              |12036| GLPS                                                       |29130119601
+ chitradurga       | chitradurga        | madakaripura              |12021| GLPS                                                       |29130118201
+ chitradurga       | chitradurga        | madakaripura              |12037| GLPS                                                       | 
+ chitradurga       | chitradurga        | madakaripura              |12020| GLPS                                                       |29130118101
+ chitradurga       | chitradurga        | madakaripura              |12027| GLPS                                                       | 
+ chitradurga       | chitradurga        | madakaripura              |12018| GLPS                                                       |29130117901
+ chitradurga       | chitradurga        | madakaripura              |12017| GLPS                                                       |29130117802
+ chitradurga       | chitradurga        | madakaripura              |12016| GULPS                                                      |29130117801
+ chitradurga       | chitradurga        | sirigere                  |11935| GHPS                                                       |29130106601
+ chitradurga       | chitradurga        | sirigere                  |11951| GHPS                                                       | 
+ chitradurga       | chitradurga        | sirigere                  |11936| GLPS                                                       |29130106701
+ chitradurga       | chitradurga        | turuvanur                 |11883| GHPS GIRLS                                                 |29130113201
+ chitradurga       | chitradurga        | turuvanur                 |11895| GHPS TURUVANUR BAGENAHALLY                                 | 
+ chitradurga       | chitradurga        | turuvanur                 |11892| GLPS                                                       |29130113901
+ chitradurga       | chitradurga        | yalagodu                  |30559| HPS SIDDAVANADURGA                                         | 
+ chitradurga       | chitradurga        | yalagodu                  |12098| LPS SIDDAVANADURGA                                         | 
+ chitradurga       | chitradurga        | yalagodu                  |12093| URDU LPS ADAVIGOLLARAHATTI                                 |29130102502
+ chitradurga       | hiriyur            | adivala                   |12727| LPS ADIVALA VADDARAHATTI                                   | 
+ chitradurga       | hiriyur            | adivala                   |12734| LPS SG COLONY                                              | 
+ chitradurga       | hiriyur            | dharmapura                |12635| LPS A.K.PALYA GOLLARAHATTI                                 | 
+ chitradurga       | hiriyur            | dharmapura                |31182| LPS BENAKANA HALLI                                         | 
+ chitradurga       | hiriyur            | eshwaragere               |12667| LPS YELAGONDANAHALLI                                       |29130305301
+ chitradurga       | hiriyur            | hiriyur north             |12610| GMHPS NEHRU MAIDEN , HIRIYUR                               |29130316907
+ chitradurga       | hiriyur            | hiriyur north             |12618| GPS WARD-22                                                | 
+ chitradurga       | hiriyur            | hiriyur north             |12619| LPS HARICHANDRAGHAT                                        | 
+ chitradurga       | hiriyur            | hiriyur north             |12607| LPS VERAVATHINAGAR (K)                                     | 
+ chitradurga       | hiriyur            | imangala                  |12803| LPS M.MAALIGE(ARALIKATTE)                                  |29130301502
+ chitradurga       | hiriyur            | metikurke                 |30056| GHPS CHIKKRANMALEGI                                        | 
+ chitradurga       | hiriyur            | yelladakere               |12767| LPS UDUVALLI VADDARAHATTI                                  | 
+ chitradurga       | holalkere          | b.durga                   |13021| GUPS HD PURA                                               | 
+ chitradurga       | holalkere          | b.durga                   |13014| LPS G.GOLLARAHATTI                                         | 
+ chitradurga       | holalkere          | chikkayammiganuru         |12922| HPS K HATTI                                                | 
+ chitradurga       | holalkere          | echagatta                 |12973| GULPS CHITRAHALLI                                          | 
+ chitradurga       | holalkere          | h.d.pura                  |13039| GLPS GOLLARAHALLI                                          | 
+ chitradurga       | holalkere          | h.d.pura                  |13028| GLPS H D PURA(URDU)                                        | 
+ chitradurga       | holalkere          | muthugaduru               |12910| GLPS MALLENAHALLI                                          |29130410001
+ chitradurga       | holalkere          | n.g.halli                 |12957| LPS AMBEGATTI                                              | 
+ chitradurga       | holalkere          | n.g.halli                 |12946| LPS TALIKATTE UPPARAHATTI                                  | 
+ chitradurga       | holalkere          | talikatte                 |13071| LPS TALIKATTE KAVAL                                        | 
+ chitradurga       | hosadurga          | belaguru                  |30039| G.L.P.S. HANUMANHATTI                                      | 
+ chitradurga       | hosadurga          | hosdurga town             |31178| GHPS D.K.KATTE                                             | 
+ chitradurga       | hosadurga          | hosdurga town             |13110| GLPS HOSAHALLI                                             | 
+ chitradurga       | hosadurga          | hosdurga town             |13115| GLPS HSD                                                   | 
+ chitradurga       | hosadurga          | hosdurga town             |13111| GLPS HULLUKATTE                                            | 
+ chitradurga       | hosadurga          | kalkere                   |13314| GLPS VEERAJAJANA HATTI                                     |29130500702
+ chitradurga       | hosadurga          | kanchipura                |13164| GHPS BUKKASAGARA                                           | 
+ chitradurga       | hosadurga          | kanchipura                |29968| GLPS GIRIYAPUR                                             | 
+ chitradurga       | hosadurga          | m.g.dibba                 |13297| G,L.P.S GIRIYAPURA (NEW SCHOOL)                            | 
+ chitradurga       | hosadurga          | m.g.dibba                 |13309| GHPS YALAKAPPANAHATTI                                      | 
+ chitradurga       | hosadurga          | m.g.dibba                 |13308| GLPS SHIVANAKATTE                                          | 
+ chitradurga       | hosadurga          | madadakere                |13252| GHPS NAKIKERE                                              | 
+ chitradurga       | hosadurga          | madadakere                |13257| GHPS RANGAVANAHALLI                                        | 
+ chitradurga       | hosadurga          | madadakere                |13261| GLPS P K HALLI                                             | 
+ chitradurga       | hosadurga          | mattodu                   |13212| GLPS GANJEGERE                                             | 
+ chitradurga       | hosadurga          | mattodu                   |13226| GLPS M GOLLARAHATTI                                        | 
+ chitradurga       | molakalmur         | block urdu                |13436| GLPS MUBARAK MOHALLA                                       |29130612401
+ chitradurga       | molakalmur         | block urdu                |13468| GUHPS                                                      |29130611102
+ chitradurga       | molakalmur         | block urdu                |13495| GUHPS                                                      |29130607702
+ chitradurga       | molakalmur         | block urdu                |13520| GULP                                                       |29130607202
+ chitradurga       | molakalmur         | block urdu                |13473| GULPS                                                      |29130604602
+ chitradurga       | molakalmur         | block urdu                |13487| GULPS                                                      |29130603902
+ chitradurga       | molakalmur         | block urdu                |13509| GULPS                                                      |29130606202
+ chitradurga       | molakalmur         | hanagal                   |13457| GHPS                                                       |29130610701
+ chitradurga       | molakalmur         | molakalmur east           |13438| K.G.B.V.                                                   |29130612703
+ chitradurga       | molakalmur         | rampura                   |13493| S.G.M.LPS.THAMENAHALLI                                     | 
+ chitradurga       | molakalmur         | tammenahalli              |13515| GHPS THAMMENAHALLI                                         | 
+ chitradurga       | molakalmur         | tammenahalli              |13523| GULPS                                                      | 
+ dharwad           | dharwad city       | gandhi chowk              |37314| DMKG CENTRAL SCH GANDHICHOUK                               |29090700808
+ dharwad           | dharwad city       | gulaganjikoppa dwd        |35845| GHPS GANDHI HINDI SCHOOL                                   | 
+ dharwad           | dharwad city       | gulaganjikoppa dwd        |35844| GHPS JIJA MATA                                             | 
+ dharwad           | dharwad city       | gulaganjikoppa dwd        |36274| HPS SHRI MAHANTESH HIGH SCHOOL                             | 
+ dharwad           | dharwad city       | madarmaddi dwd            |36289| HPS VANITA SEVA SAMAJ                                      | 
+ dharwad           | dharwad city       | madarmaddi dwd            |35843| NIVEDITA PRIMARY SCHOOL RAMANAGAR                          | 
+ dharwad           | dharwad city       | malamaddi dwd             |36279| HPS D. R . BENDRE                                          | 
+ dharwad           | dharwad city       | malamaddi dwd             |36298| HPS MARUTI HIGH SCHOOL                                     | 
+ dharwad           | dharwad city       | saptapur dwd              |35847| GHPS R N SHETTY STADIUM DHARWAD                            | 
+ dharwad           | dharwad city       | saptapur dwd              |36278| HPS SIDDARAMESHWAR HIGH SCHOOL                             | 
+ dharwad           | dharwad city       | saptapur dwd              |36280| HPS UTTANGI CHANNAPPA PRIMARY SCHOOL                       | 
+ dharwad           | hubli              | urdu hubli                |35357| HPUS SHEREWAD                                              | 
+ dharwad           | hubli              | urdu navanagar            |37442| LPUS UNKAL                                                 |29090205507
+ dharwad           | hubli              | varur                     |35350| HPS KAMPLIKOPPA                                            | 
+ dharwad           | hubli city         | anand nagar hbl           |36290| HPS SHRI ABHINAVA VIDHYA SAMSTHEY                          | 
+ dharwad           | hubli city         | anand nagar hbl           |36296| HPS SHRI REVANSIDDESHWAR                                   | 
+ dharwad           | hubli city         | hale hubli hbl            |36291| HPS SHRI JIVESHWAR                                         | 
+ dharwad           | hubli city         | indipump hbl              |36295| HPS GURUDEV VIDHYA SAMSTHEY                                | 
+ dharwad           | hubli city         | nagashettikoppa hbl       |37744| HPS SHIRADI NAGAR HUBLI                                    | 
+ dharwad           | kundagol           | gudigeri                  |37559| L P S NO-2 GUDAGERI                                        |29090401710
+ dharwad           | navalgund          | morab                     |37700| HPS NO. 2 MORAB                                            |29090503803
+ dharwad           | navalgund          | navalagund 1              |37709| LPS NO. 5 NAVALGUND                                        |29090505801
+ gulbarga          | gulbarga south     | m s k mill gulbarga       |14509| GOVT LPS URDU SAVALAGI(B)                                  |29040511804
+ kolar             | bangarapete        | balamande                 |17065| GLPS DODDAPURA                                             |29190201603
+ kolar             | bangarapete        | bangarpet                 |15029| GTHPS BANGARPET                                            |29190237906
+ kolar             | bangarapete        | boodikote                 |16935| GHPS BUVANAHALLI                                           |29191312401
+ kolar             | bangarapete        | s madamangala             |15100| GLPS GORAVANAHALLI                                         | 
+ kolar             | bangarapete        | t.gollahalli              |17054| GLPS KOGILAHALLI                                           | 
+ kolar             | k g f              | gonamakanahalli           |17141| GHPS GOLLAHALLI                                            | 
+ kolar             | k g f              | gonamakanahalli           |17135| GLPS CHIKKA KALLAHALLI                                     |29191312801
+ kolar             | k g f              | gonamakanahalli           |17137| GLPS KODIGENAHALLI                                         |29190238401
+ kolar             | k g f              | gonamakanahalli           |17133| GLPS THIRUMALAPALLI                                        |29191312901
+ kolar             | k g f              | kamasamudra               |16962| GLPS GOLLAHALLI                                            | 
+ kolar             | k g f              | robertsonpet              |16985| GHPS SWARNA NAGAR                                          | 
+ kolar             | k g f              | robertsonpet              |16987| GUMPS (BOYS) ROBERTSONPET                                  | 
+ kolar             | kolar              | annihalli (manighatta)    |17377| BARATHARATHNA VIDYA PEETA                                  | 
+ kolar             | kolar              | beglihosahalli            |17331| GLPS KONEPURA                                              |29190719401
+ kolar             | kolar              | p.c. halli                |17489| GHPS GADDEKANNUR                                           | 
+ kolar             | kolar              | vemgal                    |17169| GULPS MADIVALA                                             | 
+ kolar             | malur              | dinnahalli                |17756| GULPS THORALAKKI                                           | 
+ kolar             | malur              | k.g. halli                |17794| GLPS AGNIHALLI                                             | 
+ kolar             | malur              | lakkur                    |17533| GLPS SIDDANAHALLI COLONY                                   | 
+ kolar             | malur              | lakkur                    |17530| GLPS. VAPPACHAHALLI                                        | 
+ kolar             | malur              | malur                     |17683| GLPS JINAGATHIMMANAHALLI                                   | 
+ kolar             | malur              | shivarapatna              |17586| GLPS DODDA SABBENAHALLI                                    | 
+ kolar             | malur              | tekal                     |17622| GLPS SRIKANTHAPURA                                         | 
+ kolar             | mulbagal           | devarayasamudra           |17922| GUMHS JAHANGEER MOHALLAMULABAGALU                          |29191033417
+ kolar             | mulbagal           | mulbagal                  |17944| GHPS BANGLA                                                | 
+ kolar             | mulbagal           | n.vaddahalli              |18185| GLPS DASARLAHALLI                                          |29191023106
+ kolar             | mulbagal           | rayalamanadinne           |18131| ADARSHA HPS MYLAPURA                                       |29191013605
+ kolar             | srinivasapur       | addagal                   |18482| GLPS KUNDATHAVARIPALLI                                     | 
+ kolar             | srinivasapur       | arikunte                  |18535| GLPS YENUMAREPALLI                                         | 
+ kolar             | srinivasapur       | gownipalli                |18249| GLPS POOLAKUNTLAPALLI                                      |29191226001
+ kolar             | srinivasapur       | gownipalli                |29993| GLPS SRIRAMPUR                                             | 
+ kolar             | srinivasapur       | lakshmipura               |18440| GHPS UPPRARAHALLY                                          | 
+ kolar             | srinivasapur       | lakshmipura               |18437| GLPS BATTUVARAHALLI                                        | 
+ kolar             | srinivasapur       | lakshmipura               |18410| GLPS CHAKAPALLI                                            |29191205401
+ kolar             | srinivasapur       | lakshmipura               |18428| GLPS MUDDEPALLI                                            | 
+ kolar             | srinivasapur       | mudimadagu                |18513| GULPS YADAGANAPALLI                                        |29191232602
+ kolar             | srinivasapur       | rayalpadu                 |18310| GLPS R GOLLAHALLI                                          | 
+ kolar             | srinivasapur       | somayajalahalli           |18404| GHPS R THIMMASANDRA                                        | 
+ kolar             | srinivasapur       | somayajalahalli           |30633| GLPS KENGINATTA                                            | 
+ kolar             | srinivasapur       | somayajalahalli           |18392| GLPS MARIANPET                                             | 
+ mysore            | mysore north       | nizamiya                  |37810| MAYRAJ HPS & HS MAHADEVAPURA ROAD                          | 
+ mysore            | mysore north       | rajendranagar             |37808| JNANAGONGOYHRI RAJENDRA NAGAR                              | 
+ mysore            | mysore north       | rajendranagar             |37807| MAJESTIC PRIMARY AND HIGH SCHOOL                           | 
+ mysore            | mysore rural       | hinkal hundi              |37812| SRI VIDYA CONVENT                                          | 
+ mysore            | mysore south       | kanakagiri                |36709| GLPS URDU PILKANA                                          |29261200721
+ mysore            | mysore south       | kuvempunagar              |37818| DAISY CONVENT VIVE'N-EDN-SOCT                              | 
+ raichur           | devadurga          | b ganekal                 |38101| GLPS SURYANAYAKANA TANDA                                   |29060104602
+ raichur           | devadurga          | sunkeswarahal             |38746| GLPS SAPTAGIRI MALADAKAL                                   |29060111005
+ raichur           | manvi              | heera                     |24157| GOVT HIGH SCHOOL HEER                                      |29060605702
+ raichur           | manvi              | sangapur                  |24176| GHPS KARADIGUDDA                                           |29060608701
+ raichur           | manvi              | sangapur                  |24187| GHPS SANGAPUR                                              |29060613101
+ raichur           | manvi              | torandinni                |38044| GLPS TAYAMMA  CAMP                                         |29060614410
+ raichur           | raichur            | chicksugur                |38463| LPS  BASAVESHWAR  SHAKVADI                                 |29060711603
+ raichur           | raichur            | yapaladinni               |38443| GLPS JANATHA COLONY YAPALADINNI                            |29060713604
+ raichur           | sindhanur          | 7 mile camp               |38055| GLPS KOLI CAMP                                             |29060804911
+ raichur           | sindhanur          | gudaduru                  |37967| GLPS URDU MERANAL.                                         |29060808802
+ raichur           | sindhanur          | kalamangi                 |38219| GLPS GHANTER HATTI                                         |29060807306
+ raichur           | sindhanur          | sindhanur                 |38359| URDU HPS SINDHANUR                                         |29060815802
+ raichur           | sindhanur          | sri venkteswara camp      |38581| A.P.S LPS BUDIVAL CAMP                                     |29060802002
+ ramanagara        | channapatna        | thagachagere              |34810| G LPS N.BRAHMANIPURA                                       |29320707301
+ ramanagara        | magadi             | bachenahatti              |34581| GLPS S HANUBHOGANAHALLI BANDE                              |29320520002
+ ramanagara        | magadi             | banavadi                  |34365| G ULPS KHADARKHANPALYA                                     | 
+ ramanagara        | magadi             | byalakere                 |34395| G LPS KARAGADAHALLI                                        | 
+ ramanagara        | magadi             | byalakere                 |34403| G LPS THIMMASANDRA                                         |29320517804
+ ramanagara        | magadi             | byalakere                 |34390| G ULPS DUBBAGHATTA                                         | 
+ ramanagara        | magadi             | chakrabavi                |34470| G LPS NAGARABHAVI DODDI                                    | 
+ ramanagara        | magadi             | chakrabavi                |34454| G LPS VALAGEREPALYA                                        | 
+ ramanagara        | magadi             | hosapalya]                |34206| G LPS BASAVAPATNA                                          | 
+ ramanagara        | magadi             | hosapalya]                |34196| G LPS KODIPALYA A.                                         |29320514404
+ ramanagara        | magadi             | kuduru                    |34526| G LPS GOLLAHALLI                                           |29320514101
+ ramanagara        | magadi             | kuduru                    |34525| G LPS KADURAMANAHALLI                                      |29320508001
+ ramanagara        | magadi             | motaganahalli             |34446| G LPS ANKANAPALYA                                          | 
+ ramanagara        | magadi             | motaganahalli             |34445| G LPS HOSAPALYA                                            |29320516204
+ ramanagara        | magadi             | narasandra                |34600| G LPS ALADAKATTE                                           | 
+ ramanagara        | magadi             | narasandra                |34172| G LPS THIMMASANDRA                                         | 
+ ramanagara        | magadi             | sankighatta               |34270| G HPS RASTHEPALYA                                          | 
+ ramanagara        | magadi             | sankighatta               |34273| G LPS HOSAHALLIPALYA                                       | 
+ ramanagara        | magadi             | sankighatta               |34253| G UHPS LAYA                                                |29320501303
+ ramanagara        | ramanagara         | bannikuppe                |34987| G LPS BYALAKULIDODDI                                       | 
+ ramanagara        | ramanagara         | bannikuppe                |34989| G LPS CHAKKAREDODDI                                        | 
+ ramanagara        | ramanagara         | byramangala               |35014| G LPS CHIKKABYRAMANGALA                                    | 
+ ramanagara        | ramanagara         | lakshmipura               |34890| G LPS VADDARADODDI                                         |29320601702
+ ramanagara        | ramanagara         | manchanayakanahalli       |35071| G LPS HIREHALLI                                            |29320605301
+ ramanagara        | ramanagara         | mayaganahalli             |34301| ASHRAM A SHALE BASAVANAPURA                                |29320603604
+ ramanagara        | ramanagara         | mayaganahalli             |34320| G LPS DASAPPANADODDI BANDE                                 |29320605703
+ ramanagara        | ramanagara         | mayaganahalli             |34321| G LPS KARIYAPPANADODDI                                     | 
+ ramanagara        | ramanagara         | sugganahalli              |34949| G LPS GADAGAYYANADODDI                                     |29320810905
+ ramanagara        | ramanagara         | sugganahalli              |34955| G LPS THIRUMALAPURA                                        | 
+ yadgiri           | shorapur           | devapur                   |38923| GOVT LPS SHIBERDANDDI(VENTPUR                              |29330822602
+ yadgiri           | shorapur           | devapur                   |38908| URDU JAIBENCHI                                             |29330809902
+ yadgiri           | shorapur           | maranal                   |38960| LPS MAVINAGIDADA TANDA                                     |29330823901
+ yadgiri           | shorapur           | pethammapur               |38957| HPS SAGARNADU                                              |29330817403
+ yadgiri           | yadgir             | gurmitkal                 |25661| GOVT LPS MUMINPURA GUM                                     |29331014105
