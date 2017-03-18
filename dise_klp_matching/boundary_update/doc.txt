@@ -1,0 +1,27 @@
+match.py - for matching klp names with dise using difflib.sequencematcher. (args[] 1-district, 2-block, 3-cluster)
+	(input csv format for klp - district, block, cluster, dist_id, blck_id, clst_id)
+	(input csv format for dise - district, block, cluster)
+
+District matched and updated from ems ui.
+
+Blocks matched and updated from ems ui.
+
+block_match.csv - blocks matched but not updated, can be done from ems ui.
+
+Cluster
+
+cluster_match_result_file.csv - all klp clusters with matching dise custers and difflib.sequencematcher ratio.
+
+update_cluster_names.csv - clusters matched with difflib.sequencematcher for update names.
+
+not_match_dise.csv - new clusters from dise.
+
+update_cluster.sql - update statements for all rows in update_cluster_names.csv.
+
+update_cluster_names.sql - update statements for rows in update_cluster_names.csv where Klp=1/dise=2 column value=2.
+
+insert_clusters.sql - insert statements for rows in not_match_dise.csv.
+
+
+
+

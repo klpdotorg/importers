@@ -1,0 +1,13 @@
+klp_schools_20876.csv - all primary schools from ems.
+
+full_match_11414.csv - direct match with dise (district, school_name, dise_code full match).
+
+dataentry_match_8657.csv - manual match with dise data.
+
+without_programmes_370.csv - schools with no programmes associated with it.
+
+no_students_for_1-7_304.csv - no students for class 1-7.
+
+schools_removed_from_dise_14.csv - schools removed from dise data.
+
+not_matched_117.csv - no match found in dise data.
