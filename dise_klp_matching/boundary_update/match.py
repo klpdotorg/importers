@@ -6,8 +6,8 @@ btype=sys.argv[1]
 #infile=sys.argv[2]
 #refile=sys.argv[3]
 
-fp1=csv.reader(open('dise_boundary_list_2014-15.csv', 'r'), delimiter='|', quotechar='"')
-fp2=csv.reader(open('klp_boundary_list_2016-17.csv', 'r'), delimiter='|', quotechar='"')
+fp1=csv.reader(open('dise_school_data.csv', 'r'), delimiter='|', quotechar='"')
+fp2=csv.reader(open('boundaries.csv', 'r'), delimiter='|', quotechar='"')
 fp3=csv.writer(open('result_file.csv', 'w'), delimiter='|', quotechar='"')
 fp4=csv.writer(open('not_match_klp_'+btype+'.csv', 'w'), delimiter='|', quotechar='"')
 fp5=csv.writer(open('not_match_dise_'+btype+'.csv', 'w'), delimiter='|', quotechar='"')
@@ -69,7 +69,6 @@ def check_block(dise, klp):
                 if dised not in nomatchdise:
                     nomatchdise.append(dised)
         if rem!=[]:
-            print rem
             klp.remove(rem)
     for row in matchdise:
         if row in nomatchdise:
@@ -121,7 +120,6 @@ def check_cluster(dise, klp):
             if dised[0]==klpd[0] and dised[1]==klpd[1]:
                 if dised[2]==klpd[2]:
                     tempwriter.append(dised+ klpd+[1.0])
-                    print klpd
                     rem=klpd
                     matchdise.append(dised)
                     break
@@ -168,11 +166,9 @@ def check_cluster(dise, klp):
         rem=[]
         temp=[]
         for klpd in klp:
-            print 'hello'	
             if dised[0]==klpd[0] and dised[1]==klpd[1]:
                 s = SequenceMatcher(lambda x: x==" ", dised[2],klpd[2])
                 if round(s.ratio(), 3)>=0.7:
-                    print dised + [' '] +klpd
                     if input('matched?')!=1:
                         continue
                     rem=klpd
@@ -193,10 +189,8 @@ def check_cluster(dise, klp):
         if row in nomatchdise3:
             nomatchdise3.remove(row) 
 
-    print nomatchdise3
 
     for dised in nomatchdise2:
-        print dised
         fp5.writerow(dised)
 
     for klpd in klp:
