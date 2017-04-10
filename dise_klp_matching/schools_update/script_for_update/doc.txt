@@ -1,4 +1,7 @@
 get_inst_details.py - get schools list which have programme/student data or both.
 
-generate_update_sql.py - create sql file with update statements for schools matched
+generate_update_sql.py - create sql file with update statements for schools matched.
 
+generate_update_sql - create sql file with insert statements for schools matched.
+
+https://www.facebook.com/odianews24/videos/892043647605404/
